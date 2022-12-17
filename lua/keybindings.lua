@@ -37,13 +37,11 @@ keymap("c", keys.c_next_item, "<C-n>", opts_remap)
 keymap("c", keys.c_prev_item, "<C-p>", opts_remap)
 
 -- save && quit
--- keymap("n", keys.n_one_quit, "<Cmd>q<CR>")
-keymap("n", keys.n_one_quit, ":q!<CR>")
 keymap("n", keys.n_save, ":w<CR>")
 keymap("n", keys.n_save_quit, ":wq<CR>")
 keymap("n", keys.n_save_all, ":wa<CR>")
 keymap("n", keys.n_save_all_quit, ":wqa<CR>")
--- keymap("n", keys.n_force_quit, ":qa!<CR>")
+keymap("n", keys.n_force_quit, ":qa!<CR>")
 
 -- $跳到行尾不带空格 (交换$ 和 g_)
 keymap({ "v", "n" }, "$", "g_")
