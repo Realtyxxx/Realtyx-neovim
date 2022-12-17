@@ -14,3 +14,4 @@
 - nvim-treesitter ensure_installed 
 - mason_config ensure_installed 
 
+

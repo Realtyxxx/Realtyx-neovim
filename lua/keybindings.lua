@@ -37,11 +37,13 @@ keymap("c", keys.c_next_item, "<C-n>", opts_remap)
 keymap("c", keys.c_prev_item, "<C-p>", opts_remap)
 
 -- save && quit
+-- keymap("n", keys.n_one_quit, "<Cmd>q<CR>")
+keymap("n", keys.n_one_quit, ":q!<CR>")
 keymap("n", keys.n_save, ":w<CR>")
 keymap("n", keys.n_save_quit, ":wq<CR>")
 keymap("n", keys.n_save_all, ":wa<CR>")
 keymap("n", keys.n_save_all_quit, ":wqa<CR>")
-keymap("n", keys.n_force_quit, ":qa!<CR>")
+-- keymap("n", keys.n_force_quit, ":qa!<CR>")
 
 -- $跳到行尾不带空格 (交换$ 和 g_)
 keymap({ "v", "n" }, "$", "g_")
@@ -67,6 +69,11 @@ else
     silent = false,
   })
 end
+
+----------------move from init.vim--------------------
+map("n", "<F4>", ":TagbarToggle<CR>", opt)
+map("n", "<F6>", ":InstantMarkdownPreview<CR>", opt)
+map("n", "<C-a>", "gg<S-v>G", opt)
 
 -------------------- fix ------------------------------
 
@@ -220,12 +227,12 @@ pluginKeys.mapLSP = function(mapbuf)
 end
 
 -- typescript 快捷键
-pluginKeys.mapTsLSP = function(bufnr)
-  local bufopts = { noremap = true, silent = true, buffer = bufnr }
-  keymap("n", lsp.ts_organize, ":TSLspOrganize<CR>", bufopts)
-  keymap("n", lsp.ts_rename_file, ":TSLspRenameFile<CR>", bufopts)
-  keymap("n", lsp.ts_add_missing_import, ":TSLspImportAll<CR>", bufopts)
-end
+-- pluginKeys.mapTsLSP = function(bufnr)
+--   local bufopts = { noremap = true, silent = true, buffer = bufnr }
+--   keymap("n", lsp.ts_organize, ":TSLspOrganize<CR>", bufopts)
+--   keymap("n", lsp.ts_rename_file, ":TSLspRenameFile<CR>", bufopts)
+--   keymap("n", lsp.ts_add_missing_import, ":TSLspImportAll<CR>", bufopts)
+-- end
 
 -- nvim-dap
 pluginKeys.mapDAP = function()

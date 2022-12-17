@@ -328,6 +328,16 @@ packer.startup({
     -- use("jbyuki/one-small-step-for-vimkind")
     --[[ use("dstein64/vim-startuptime") ]]
 
+    use("octol/vim-cpp-enhanced-highlight")
+    use("vim-scripts/ctags.vim")
+    use("vim-scripts/a.vim")
+    use("majutsushi/tagbar")
+    use("bfrg/vim-cpp-modern")
+
+    -- Markdown
+    use("vim-scripts/DoxygenToolkit.vim")
+    use("instant-markdown/vim-instant-markdown")
+
     if paccker_bootstrap then
       packer.sync()
     end
@@ -348,11 +358,11 @@ packer.startup({
       -- default_url_format = "https://gitcode.net/mirrors/%s",
       -- default_url_format = "https://gitclone.com/github.com/%s",
     },
-    -- display = {
-    -- 使用浮动窗口显示
-    --   open_fn = function()
-    --     return require("packer.util").float({ border = "single" })
-    --   end,
-    -- },
+    display = {
+      -- 使用浮动窗口显示
+      open_fn = function()
+        return require("packer.util").float({ border = "single" })
+      end,
+    },
   },
 })
