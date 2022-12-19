@@ -40,6 +40,23 @@ formatter.setup({
         }
       end,
     },
+    -- c = {
+    --   -- prettier
+    --   function()
+    --     return {
+    --       exe = "clang-format",
+    --       args = { "-i", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)) },
+    --       stdin = true,
+    --     }
+    --   end,
+    -- },
+    -- Use the special "*" filetype for defining formatter configurations on
+    -- any filetype
+    ["*"] = {
+      -- "formatter.filetypes.any" defines default configurations for any
+      -- filetype
+      require("formatter.filetypes.any").remove_trailing_whitespace,
+    },
   },
 })
 

@@ -258,25 +258,25 @@ packer.startup({
     })
 
     -- OceanicNext
-    -- use({ "mhartington/oceanic-next", event = "VimEnter" })
+    use({ "mhartington/oceanic-next", event = "VimEnter" })
 
     -- gruvbox
-    -- use({
-    --   "ellisonleao/gruvbox.nvim",
-    --   requires = { "rktjmp/lush.nvim" },
-    -- })
+    use({
+      "ellisonleao/gruvbox.nvim",
+      requires = { "rktjmp/lush.nvim" },
+    })
 
     -- zephyr
     -- use("glepnir/zephyr-nvim")
 
     -- nord
-    -- use("shaunsingh/nord.nvim")
+    use("shaunsingh/nord.nvim")
 
     -- onedark
-    -- use("ful1e5/onedark.nvim")
+    use("ful1e5/onedark.nvim")
 
     -- nightfox
-    -- use("EdenEast/nightfox.nvim")
+    use("EdenEast/nightfox.nvim")
 
     -------------------------------------------------------
     -- git

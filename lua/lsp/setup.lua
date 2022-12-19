@@ -47,8 +47,11 @@ mason_config.setup({
     "yamlls",
     "gopls",
     "clangd",
+    "neocmake",
+    "texlab",
     "cmake",
   },
+  automatic_installation = true,
 })
 
 -- 安装列表

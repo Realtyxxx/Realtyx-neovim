@@ -3,18 +3,19 @@ local M = {
 
   keys = {
 
-    leader_key = " ",
+    leader_key = ",",
 
     -- : 模式
     c_next_item = "<C-j>",
     c_prev_item = "<C-k>",
 
     -- normal 模式
+    n_quit_this = "<leader>q", -- :q!
     n_save = "<leader>w", -- :w
     n_save_quit = "<leader>wq", --:wq
     n_save_all = "<leader>wa", -- :wa
     -- n_save_all_quit = "<leader>qa", -- :wqa
-    n_force_quit = "<leader>q", -- :qa!
+    n_force_quit = "<leader>qa", -- :qa!
 
     n_v_5j = "<C-j>",
     n_v_5k = "<C-k>",
@@ -54,10 +55,10 @@ local M = {
       jump_down = "<A-j>",
 
       -- <leader> + hjkl 窗口之间跳转
-      -- jump_left = "<leader>h",
-      -- jump_right = "<leader>j",
-      -- jump_up = "<leader>k",
-      -- jump_down = "<leader>l",
+      -- jump_left = "<space>h",
+      -- jump_right = "<space>j",
+      -- jump_up = "<space>k",
+      -- jump_down = "<space>l",
 
       -- 窗口比例控制
       width_decrease = "s,",
