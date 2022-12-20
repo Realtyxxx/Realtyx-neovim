@@ -82,7 +82,7 @@ local M = {
       close = "zz",
     },
 
-    format = "<leader>f",
+    format = "<F9>",
 
     terminal_to_normal = "<Esc>",
     -- TODO
@@ -97,8 +97,9 @@ local M = {
 
     enable = true,
 
-    toggle = "<A-m>",
-    -- toggle = "<leader>m"
+    toggle = "<leader>f",
+    -- toggle = "<A-m>",
+    -- toggle = "<leader>m",
     edit = { "o", "<2-LeftMouse>" },
     system_open = "<CR>",
     -- v分屏打开文件
@@ -151,6 +152,7 @@ local M = {
 
     find_files = "<C-p>",
     live_grep = "<C-f>",
+    git_status = "gst",
 
     -- 上下移动
     move_selection_next = "<C-j>",
@@ -221,7 +223,7 @@ local M = {
   lsp = {
     rename = "<leader>rn",
     code_action = "<leader>ca",
-    format = "<leader>f",
+    format = "<f9>",
     definition = "gd",
     references = "gr",
     hover = "gh",

@@ -53,6 +53,7 @@ telescope.setup({
 
 keymap("n", uTelescope.find_files, ":Telescope find_files<CR>")
 keymap("n", uTelescope.live_grep, ":Telescope live_grep<CR>")
+keymap("n", uTelescope.git_status, ":Telescope git_status<CR>")
 
 pcall(telescope.load_extension, "env")
 -- To get ui-select loaded and working with telescope, you need to call

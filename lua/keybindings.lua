@@ -69,10 +69,11 @@ else
   })
 end
 
-----------------move from init.vim--------------------
+------------tyx  move from init.vim--------------------
 map("n", "<F4>", ":TagbarToggle<CR>", opt)
 map("n", "<F6>", ":InstantMarkdownPreview<CR>", opt)
 map("n", "<C-a>", "gg<S-v>G", opt)
+map("i", "jj", "<Esc>", opt)
 
 -------------------- fix ------------------------------
 
@@ -131,7 +132,7 @@ end
 keymap("n", keys.fold.open, ":foldopen<CR>")
 keymap("n", keys.fold.close, ":foldclose<CR>")
 
-keymap("n", keys.format, "<cmd>lua vim.lsp.buf.formatting()<CR>")
+keymap("n", keys.format, "<cmd>lua vim.lsp.buf.format{async = true}()<CR>")
 
 -- Esc 回 Normal 模式
 keymap("t", keys.terminal_to_normal, "<C-\\><C-n>")
