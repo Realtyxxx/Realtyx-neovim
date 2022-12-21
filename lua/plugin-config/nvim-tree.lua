@@ -56,7 +56,7 @@ local list_keys = { -- 打开文件或文件夹
   },
   {
     key = uTree.remove,
-    action = "remove",
+    action = "trash",
   },
   {
     key = uTree.rename,
@@ -117,6 +117,7 @@ nvim_tree.setup({
   update_focused_file = {
     enable = true,
     update_cwd = false,
+    update_root = true,
   },
   filters = {
     -- 隐藏 .文件

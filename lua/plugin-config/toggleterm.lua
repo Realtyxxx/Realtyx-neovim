@@ -26,7 +26,6 @@ local Terminal = require("toggleterm.terminal").Terminal
 
 local htop = Terminal:new({
   cmd = "htop",
-  dir = ".",
   direction = "vertical",
 })
 
@@ -59,7 +58,6 @@ local lazygit = Terminal:new({
 local ta = Terminal:new({
   direction = "float",
   close_on_exit = true,
-  autochdir = true,
 })
 
 local tb = Terminal:new({
@@ -121,7 +119,7 @@ vim.keymap.set({ "n", "t" }, uToggleTerm.toggle_window_C, M.toggleC)
 
 vim.keymap.set({ "n", "t" }, "<leader>th", M.toggleHtop)
 
---[[ 
+--[[
 vim.keymap.set({ "n", "t" }, "<leader>tj", function()
   M.toggleA("pnpm test")
 end)

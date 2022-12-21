@@ -40,22 +40,15 @@ formatter.setup({
         }
       end,
     },
-    -- c = {
-    --   -- prettier
-    --   function()
-    --     return {
-    --       exe = "clang-format",
-    --       args = { "-i", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)) },
-    --       stdin = true,
-    --     }
-    --   end,
-    -- },
-    -- Use the special "*" filetype for defining formatter configurations on
-    -- any filetype
-    ["*"] = {
-      -- "formatter.filetypes.any" defines default configurations for any
-      -- filetype
-      require("formatter.filetypes.any").remove_trailing_whitespace,
+    python = {
+      -- autopep8
+      function()
+        return {
+          exe = "autopep8",
+          args = { "-" },
+          stdin = 1,
+        }
+      end,
     },
   },
 })
@@ -65,7 +58,7 @@ vim.api.nvim_exec(
   [[
 augroup FormatAutogroup
   autocmd!
-  autocmd BufWritePost *.js,*.rs,*.lua FormatWrite
+  autocmd BufWritePost *.js,*.rs,*.lua,*.py FormatWrite
 augroup END
 ]],
   true

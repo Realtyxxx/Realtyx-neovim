@@ -21,7 +21,10 @@ require("format.setup")
 -- DAP
 require("dap.setup")
 
+require("plugin-config.instant-markdown")
 -- require("dap.vimspector")
 -- utils
 -- 复制到windows剪贴板
 -- require('utils.fix-yank')
+
+require("code-runner")

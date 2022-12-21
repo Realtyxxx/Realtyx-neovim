@@ -130,6 +130,16 @@ packer.startup({
       end,
     })
 
+    -- Markdown
+    use({
+      "iamcco/markdown-preview.nvim",
+      run = "cd app && npm install",
+      setup = function()
+        vim.g.mkdp_filetypes = { "markdown" }
+      end,
+      ft = { "markdown" },
+    })
+
     -- toggleterm
     use({
       "akinsho/toggleterm.nvim",
@@ -328,15 +338,15 @@ packer.startup({
     -- use("jbyuki/one-small-step-for-vimkind")
     --[[ use("dstein64/vim-startuptime") ]]
 
+    -- move from my vimrc
     use("octol/vim-cpp-enhanced-highlight")
     use("vim-scripts/ctags.vim")
     use("vim-scripts/a.vim")
     use("majutsushi/tagbar")
     use("bfrg/vim-cpp-modern")
 
-    -- Markdown
-    use("vim-scripts/DoxygenToolkit.vim")
-    use("instant-markdown/vim-instant-markdown")
+    -- CodeRunner
+    use({ "CRAG666/code_runner.nvim", requires = "nvim-lua/plenary.nvim" })
 
     if paccker_bootstrap then
       packer.sync()
@@ -350,7 +360,7 @@ packer.startup({
     -- snapshot = "v1",
 
     -- 最大并发数
-    max_jobs = 10,
+    max_jobs = 32,
     -- 自定义源
     git = {
       -- default_url_format = "https://hub.fastgit.xyz/%s",
@@ -358,11 +368,11 @@ packer.startup({
       -- default_url_format = "https://gitcode.net/mirrors/%s",
       -- default_url_format = "https://gitclone.com/github.com/%s",
     },
-    display = {
+    --[[ display = {
       -- 使用浮动窗口显示
       open_fn = function()
         return require("packer.util").float({ border = "single" })
       end,
-    },
+    }, ]]
   },
 })

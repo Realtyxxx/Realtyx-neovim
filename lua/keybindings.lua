@@ -33,8 +33,8 @@ local opts_expr = {
 }
 
 -- 命令行下 Ctrl+j/k  上一个下一个
-keymap("c", keys.c_next_item, "<C-n>", opts_remap)
-keymap("c", keys.c_prev_item, "<C-p>", opts_remap)
+-- keymap("c", keys.c_next_item, "<C-n>", opts_remap)
+-- keymap("c", keys.c_prev_item, "<C-p>", opts_remap)
 
 -- save && quit
 keymap("n", keys.n_quit_this, ":q!<CR>")
@@ -71,9 +71,16 @@ end
 
 ------------tyx  move from init.vim--------------------
 map("n", "<F4>", ":TagbarToggle<CR>", opt)
-map("n", "<F6>", ":InstantMarkdownPreview<CR>", opt)
+map("n", "<F7>", ":MarkdownPreviewToggle<CR>", opt)
 map("n", "<C-a>", "gg<S-v>G", opt)
-map("i", "jj", "<Esc>", opt)
+-- map("i", "jj", "<Esc>", opt)
+map("n", "<leader>sl", ":source ~/.config/nvim/init.lua<CR> : source ~/.config/nvim/lua/keybindings.lua<CR>", opt)
+map("n", "<leader>nl", ":vs ~/.config/nvim/init.lua<CR>", opt)
+-- Code Runner
+map("n", "<f10>c", ":RunCode <CR>", opt)
+map("n", "<f10>f", ":RunFile float <CR>", opt)
+map("n", "<f10>b", ":RunFile buf <CR>", opt)
+map("n", "<f10>t", ":RunFile toggleterm <CR>", opt)
 
 -------------------- fix ------------------------------
 
@@ -132,8 +139,6 @@ end
 keymap("n", keys.fold.open, ":foldopen<CR>")
 keymap("n", keys.fold.close, ":foldclose<CR>")
 
-keymap("n", keys.format, "<cmd>lua vim.lsp.buf.format{async = true}()<CR>")
-
 -- Esc 回 Normal 模式
 keymap("t", keys.terminal_to_normal, "<C-\\><C-n>")
 -- Terminal相关
@@ -158,15 +163,15 @@ pluginKeys.mapLSP = function(mapbuf)
   -- rename
   --[[
   Lspsaga 替换 rn
-  mapbuf("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opt)
-  --]]
   mapbuf("n", lsp.rename, "<cmd>lua vim.lsp.buf.rename()<CR>")
+  --]]
+  mapbuf("n", lsp.rename, "<cmd>Lspsaga rename<CR>", opt)
   -- code action
   --[[
   Lspsaga 替换 ca
-  mapbuf("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opt)
-  --]]
   mapbuf("n", lsp.code_action, "<cmd>lua vim.lsp.buf.code_action()<CR>")
+  --]]
+  mapbuf("n", lsp.code_action, "<cmd>Lspsaga code_action<CR>", opt)
   -- go xx
   --[[
     mapbuf('n', 'gd', '<cmd>Lspsaga preview_definition<CR>', opt)
@@ -180,10 +185,10 @@ pluginKeys.mapLSP = function(mapbuf)
     })
   end)
   --[[
-  mapbuf("n", "gh", "<cmd>Lspsaga hover_doc<cr>", opt)
+  mapbuf("n", lsp.hover, "<cmd>lua vim.lsp.buf.hover()<CR>")
   Lspsaga 替换 gh
   --]]
-  mapbuf("n", lsp.hover, "<cmd>lua vim.lsp.buf.hover()<CR>")
+  mapbuf("n", lsp.hover, "<cmd>Lspsaga hover_doc<cr>", opt)
   --[[
   Lspsaga 替换 gr
   mapbuf("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opt)
@@ -195,6 +200,8 @@ pluginKeys.mapLSP = function(mapbuf)
     "<cmd>lua require'telescope.builtin'.lsp_references(require('telescope.themes').get_ivy())<CR>"
   )
 
+  -- Format
+  -- keymap("n", keys.format, ":Format<CR>")
   if vim.fn.has("nvim-0.8") == 1 then
     mapbuf("n", lsp.format, "<cmd>lua vim.lsp.buf.format({ async = true })<CR>")
   else
@@ -203,18 +210,15 @@ pluginKeys.mapLSP = function(mapbuf)
 
   --[[
   Lspsaga 替换 gp, gj, gk
-  mapbuf("n", "gp", "<cmd>lua vim.diagnostic.open_float()<CR>", opt)
-  mapbuf("n", "gj", "<cmd>lua vim.diagnostic.goto_next()<CR>", opt)
-  mapbuf("n", "gk", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opt)
-  --]]
-  -- diagnostic
-  -- mapbuf("n", "gp", "<cmd>Lspsaga show_line_diagnostics<CR>", opt)
-  -- mapbuf("n", "gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", opt)
-  -- mapbuf("n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opt)
-
   mapbuf("n", lsp.open_flow, "<cmd>lua vim.diagnostic.open_float()<CR>")
   mapbuf("n", lsp.goto_next, "<cmd>lua vim.diagnostic.goto_next()<CR>")
   mapbuf("n", lsp.goto_prev, "<cmd>lua vim.diagnostic.goto_prev()<CR>")
+  --]]
+  -- diagnostic
+  mapbuf("n", lsp.open_flow, "<cmd>Lspsaga show_line_diagnostics<CR>", opt)
+  mapbuf("n", lsp.goto_next, "<cmd>Lspsaga diagnostic_jump_next<cr>", opt)
+  mapbuf("n", lsp.goto_prev, "<cmd>Lspsaga diagnostic_jump_prev<cr>", opt)
+
   -- 未用
   -- mapbuf("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opt)
   -- mapbuf("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opt)

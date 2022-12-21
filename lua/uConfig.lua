@@ -6,8 +6,8 @@ local M = {
     leader_key = ",",
 
     -- : 模式
-    c_next_item = "<C-j>",
-    c_prev_item = "<C-k>",
+    -- c_next_item = "<C-j>",
+    -- c_prev_item = "<C-k>",
 
     -- normal 模式
     n_quit_this = "<leader>q", -- :q!
@@ -97,8 +97,8 @@ local M = {
 
     enable = true,
 
-    toggle = "<leader>f",
-    -- toggle = "<A-m>",
+    -- toggle = "<leader>f",
+    toggle = "<A-m>",
     -- toggle = "<leader>m",
     edit = { "o", "<2-LeftMouse>" },
     system_open = "<CR>",
@@ -190,8 +190,10 @@ local M = {
     },
     -- Visual 模式
     opleader = {
-      line = "gc",
-      bock = "gb",
+      line = "gc", -- 行注释
+      block = "gb", -- 块注释
+      -- line = "cc",
+      -- bock = "cs",
     },
   },
 

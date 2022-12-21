@@ -9,7 +9,8 @@ local diagnostics = null_ls.builtins.diagnostics
 local code_actions = null_ls.builtins.code_actions
 
 null_ls.setup({
-  debug = false,
+  autostart = true,
+  debug = true,
   sources = {
     -- Formatting ---------------------
     --  brew install shfmt
@@ -46,13 +47,16 @@ null_ls.setup({
     -----------------------------------------------------
     -- Ruby
     -- gem install rubocop
-    formatting.rubocop,
+    -- formatting.rubocop,
     -- json
     -- npm install -g fixjson
     formatting.fixjson,
     -- toml
     -- cargo install taplo-cli
     formatting.taplo,
+    -- added
+    formatting.clang_format,
+    formatting.autopep8,
     -----------------------------------------------------
     -- Diagnostics  ---------------------
     -- diagnostics.eslint.with({
@@ -83,9 +87,10 @@ null_ls.setup({
   -- #{c}: code (if available)
   diagnostics_format = "[#{s}] #{m}",
   on_attach = function(_)
-    vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()']])
-    -- if client.resolved_capabilities.document_formatting then
-    --   vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+    vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format({async=true})']])
+    -- vim.cmd([[command! Format execute 'Format']])
+    -- if client.reserver_capabilities.document_formatting then
+    vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format({async=true})")
     -- end
   end,
 })

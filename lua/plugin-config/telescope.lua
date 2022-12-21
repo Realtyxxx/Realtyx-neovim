@@ -18,6 +18,7 @@ telescope.setup({
     initial_mode = "insert",
     -- vertical , center , cursor
     layout_strategy = "horizontal",
+    -- layout_strategy = "cursor",
     -- 窗口内快捷键
     mappings = {
       i = {
@@ -36,11 +37,13 @@ telescope.setup({
       },
     },
   },
-  pickers = {
+  --[[   pickers = {
     find_files = {
       -- theme = "dropdown", -- 可选参数： dropdown, cursor, ivy
+      -- cwd = vim.fn.expand("%:p:h"),
+      -- cwd = vim.fn.systemlist("git rev-parse --show-toplevel")[1],
     },
-  },
+  }, ]]
   extensions = {
     ["ui-select"] = {
       require("telescope.themes").get_dropdown({
