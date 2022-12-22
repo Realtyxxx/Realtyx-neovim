@@ -41,7 +41,7 @@ require("code_runner").setup({
     javascript = "node",
     java = "cd $dir && javac $fileName && java $fileNameWithoutExt",
     c = "cd $dir && gcc $fileName -std=c99 -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-    cpp = "cd $dir && g++ $fileName -std=c++17 -lpthread -o $fileNameWithoutExt.out && $dir$fileNameWithoutExt.out",
+    cpp = "cd $dir && g++ $fileName -std=c++17 -lpthread -o $fileNameWithoutExt.out && $dir/$fileNameWithoutExt.out",
     objective_c = "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
     php = "php",
     python = "python3 -u",
