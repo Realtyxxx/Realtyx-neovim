@@ -246,6 +246,11 @@ local M = {
     -- ts_fix_all = "gf",
     -- ts_goto_source = "gD",
   },
+
+  -- clangd
+  clangd = {
+    ClangdSwitchSourceHeader = "<C-s>",
+  },
 }
 
 return M

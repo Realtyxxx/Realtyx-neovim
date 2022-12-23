@@ -85,6 +85,8 @@ map("n", "<f10>t", ":RunFile toggleterm <CR>", opt)
 local tc = uConfig.todoComments
 map("n", tc.TodoTelescope, ":TodoTelescope <CR>", opt)
 map("n", tc.TodoLocList, ":TodoLocList <CR>", opt)
+-- clangd
+map("n", uConfig.clangd.ClangdSwitchSourceHeader, ":ClangdSwitchSourceHeader<CR>", opt)
 
 -------------------- fix ------------------------------
 
