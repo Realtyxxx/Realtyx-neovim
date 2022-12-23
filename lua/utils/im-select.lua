@@ -38,6 +38,9 @@ M.insertEnter = function()
 end
 
 M.insertLeave = function()
+  if vim.fn.has("macunix") ~= 1 and vim.fn.has("macunix") ~= 1 then
+    return
+  end
   if vim.fn.executable("im-select") ~= 1 and vim.fn.executable("im-select.exe") ~= 1 then
     vim.notify("没有找到 im-select 无法切换输入法, https://github.com/daipeihust/im-select")
     return
