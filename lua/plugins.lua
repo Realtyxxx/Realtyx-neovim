@@ -36,8 +36,13 @@ packer.startup({
     -- Packer 可以升级自己
     use("wbthomason/packer.nvim")
     -------------------------- plugins -------------------------------------------
-    -- use("lewis6991/impatient.nvim")
-    -- use("nathom/filetype.nvim")
+    use({
+      "lewis6991/impatient.nvim",
+      config = function()
+        require("plugin-config.impatient")
+      end,
+    })
+    use("nathom/filetype.nvim")
 
     -- nvim-notify
     use({
@@ -86,6 +91,13 @@ packer.startup({
       },
       config = function()
         require("plugin-config.telescope")
+      end,
+    })
+    -- outline
+    use({
+      "simrat39/symbols-outline.nvim",
+      config = function()
+        require("plugin-config.symbols-outline")
       end,
     })
 
@@ -335,7 +347,7 @@ packer.startup({
     use("octol/vim-cpp-enhanced-highlight")
     use("vim-scripts/ctags.vim")
     use("vim-scripts/a.vim")
-    use("majutsushi/tagbar")
+    -- use("majutsushi/tagbar")
     use("bfrg/vim-cpp-modern")
 
     -- bookmarks

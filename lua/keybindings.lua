@@ -70,7 +70,7 @@ else
 end
 
 ------------tyx  move from init.vim--------------------
-map("n", "<F4>", ":TagbarToggle<CR>", opt)
+map("n", "<F4>", ":SymbolsOutline<CR>", opt)
 map("n", "<F7>", ":MarkdownPreviewToggle<CR>", opt)
 map("n", "<C-a>", "gg<S-v>G", opt)
 -- map("i", "jj", "<Esc>", opt)
@@ -226,8 +226,8 @@ pluginKeys.mapLSP = function(mapbuf)
   mapbuf("n", lsp.goto_prev, "<cmd>Lspsaga diagnostic_jump_prev<cr>", opt)
 
   -- 未用
-  -- mapbuf("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opt)
-  -- mapbuf("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opt)
+  mapbuf("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opt)
+  mapbuf("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opt)
   -- mapbuf('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opt)
   -- mapbuf("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opt)
   -- mapbuf('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opt)

@@ -155,9 +155,12 @@ local M = {
 
     enable = true,
 
-    find_files = "<C-p>",
-    live_grep = "<C-f>",
-    git_status = "gst",
+    find_files = "<C-p><C-f>",
+    live_grep = "<C-p><C-g>",
+    git_status = "<C-p><C-s>",
+    oldfiles = "<C-p><C-o>",
+    current_buffer_fuzzy_find = "<C-p><C-c>",
+    projects = "<C-p><C-p>",
 
     -- 上下移动
     move_selection_next = "<C-j>",
