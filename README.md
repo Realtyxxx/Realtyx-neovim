@@ -1,7 +1,7 @@
 ## Required
 
 - Nerd Fonts.
-- Neovim v0.8.x.
+- [ ] Neovim v0.8.x.
 - Node.js v16+.
 
 ## Install
@@ -11,7 +11,5 @@
 ## todo
 
 - packer init first
-- nvim-treesitter ensure_installed 
-- mason_config ensure_installed 
-
-
+- nvim-treesitter ensure_installed
+- mason_config ensure_installed

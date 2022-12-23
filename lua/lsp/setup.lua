@@ -34,7 +34,7 @@ mason_config.setup({
   ensure_installed = {
     "sumneko_lua",
     "tsserver",
-    "tailwindcss",
+    -- "tailwindcss",
     "bashls",
     "cssls",
     "dockerls",
@@ -47,9 +47,9 @@ mason_config.setup({
     "yamlls",
     "gopls",
     "clangd",
-    "neocmake",
     "texlab",
     "cmake",
+    "marksman",
   },
   automatic_installation = false,
 })
@@ -69,11 +69,11 @@ local servers = {
   tsserver = require("lsp.config.typescript"),
   yamlls = require("lsp.config.yamlls"),
   dockerls = require("lsp.config.docker"),
-  tailwindcss = require("lsp.config.tailwindcss"),
+  -- tailwindcss = require("lsp.config.tailwindcss"),
   rust_analyzer = require("lsp.config.rust"),
   taplo = require("lsp.config.taplo"), -- toml
   gopls = require("lsp.config.gopls"),
-  remark_ls = require("lsp.config.markdown"),
+  marksman = require("lsp.config.markdown"),
   clangd = require("lsp.config.clangd"),
   cmake = require("lsp.config.cmake"),
 }

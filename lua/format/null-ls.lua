@@ -43,7 +43,11 @@ null_ls.setup({
     -- Python
     -- pip install black
     -- asdf reshim python
-    formatting.black.with({ extra_args = { "--fast" } }),
+    -- added
+    formatting.clang_format,
+    formatting.autopep8,
+    -- formatting.black.with({ extra_args = { "--fast" } }),
+    -- formatting.remark_cli,
     -----------------------------------------------------
     -- Ruby
     -- gem install rubocop
@@ -54,9 +58,6 @@ null_ls.setup({
     -- toml
     -- cargo install taplo-cli
     formatting.taplo,
-    -- added
-    formatting.clang_format,
-    formatting.autopep8,
     -----------------------------------------------------
     -- Diagnostics  ---------------------
     -- diagnostics.eslint.with({
