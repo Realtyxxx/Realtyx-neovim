@@ -81,6 +81,10 @@ map("n", "<f10>c", ":RunCode <CR>", opt)
 map("n", "<f10>f", ":RunFile float <CR>", opt)
 map("n", "<f10>b", ":RunFile buf <CR>", opt)
 map("n", "<f10>t", ":RunFile toggleterm <CR>", opt)
+-- todo
+local tc = uConfig.todoComments
+map("n", tc.TodoTelescope, ":TodoTelescope <CR>", opt)
+map("n", tc.TodoLocList, ":TodoLocList <CR>", opt)
 
 -------------------- fix ------------------------------
 

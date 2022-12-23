@@ -132,6 +132,11 @@ local M = {
     dir_up = "[",
   },
 
+  todoComments = {
+    TodoTelescope = "<leader>tt",
+    TodoLocList = "<leader>tl",
+  },
+
   bufferLine = {
 
     enable = true,

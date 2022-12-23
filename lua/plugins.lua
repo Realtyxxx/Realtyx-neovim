@@ -82,6 +82,7 @@ packer.startup({
         -- telescope extensions
         { "LinArcX/telescope-env.nvim" },
         { "nvim-telescope/telescope-ui-select.nvim" },
+        { "dhruvmanila/telescope-bookmarks.nvim" },
       },
       config = function()
         require("plugin-config.telescope")
@@ -147,14 +148,6 @@ packer.startup({
         require("plugin-config.toggleterm")
       end,
     })
-
-    -- surround
-    -- use({
-    --   "ur4ltz/surround.nvim",
-    --   config = function()
-    --     require("plugin-config.surround")
-    --   end,
-    -- })
 
     -- nvim-surround
     use({
@@ -344,6 +337,9 @@ packer.startup({
     use("vim-scripts/a.vim")
     use("majutsushi/tagbar")
     use("bfrg/vim-cpp-modern")
+
+    -- bookmarks
+    use("MattesGroeger/vim-bookmarks")
 
     -- CodeRunner
     use({ "CRAG666/code_runner.nvim", requires = "nvim-lua/plenary.nvim" })
