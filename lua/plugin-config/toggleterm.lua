@@ -1,4 +1,10 @@
----@diagnostic disable: missing-parameter
+local uConfig = require("uConfig")
+local uToggleTerm = uConfig.toggleterm
+
+if uToggleTerm == nil or not uToggleTerm.enable then
+  return
+end
+
 local status, toggleterm = pcall(require, "toggleterm")
 if not status then
   vim.notify("没有找到 toggleterm")
@@ -17,6 +23,11 @@ toggleterm.setup({
 })
 
 local Terminal = require("toggleterm.terminal").Terminal
+
+local htop = Terminal:new({
+  cmd = "htop",
+  direction = "vertical",
+})
 
 local lazygit = Terminal:new({
   cmd = "lazygit",
@@ -61,7 +72,7 @@ local tc = Terminal:new({
 
 local M = {}
 
-M.toggleA = function()
+M.toggleA = function(cmd)
   if ta:is_open() then
     ta:close()
     return
@@ -69,6 +80,9 @@ M.toggleA = function()
   tb:close()
   tc:close()
   ta:open()
+  if cmd ~= nil then
+    ta:send(cmd)
+  end
 end
 
 M.toggleB = function()
@@ -95,4 +109,18 @@ M.toggleG = function()
   lazygit:toggle()
 end
 
-require("keybindings").mapToggleTerm(M)
+M.toggleHtop = function()
+  htop:toggle()
+end
+
+vim.keymap.set({ "n", "t" }, uToggleTerm.toggle_window_A, M.toggleA)
+vim.keymap.set({ "n", "t" }, uToggleTerm.toggle_window_B, M.toggleB)
+vim.keymap.set({ "n", "t" }, uToggleTerm.toggle_window_C, M.toggleC)
+
+vim.keymap.set({ "n", "t" }, "<leader>th", M.toggleHtop)
+
+--[[
+vim.keymap.set({ "n", "t" }, "<leader>tj", function()
+  M.toggleA("pnpm test")
+end)
+]]

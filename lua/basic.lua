@@ -45,7 +45,7 @@ vim.wo.wrap = false
 -- 光标在行首尾时<Left><Right>可以跳到下一行
 vim.o.whichwrap = "<,>,[,]"
 -- 允许隐藏被修改过的buffer
-vim.o.hidden = true
+vim.o.hidden = false
 -- 鼠标支持
 vim.o.mouse = "a"
 -- 禁止创建备份文件
@@ -53,7 +53,7 @@ vim.o.backup = false
 vim.o.writebackup = false
 vim.o.swapfile = false
 -- smaller updatetime
-vim.o.updatetime = 300
+vim.o.updatetime = 500
 -- 设置 timeoutlen 为等待键盘快捷键连击时间500毫秒，可根据需要设置
 -- 遇到问题详见：https://github.com/nshen/learn-neovim-lua/issues/1
 vim.o.timeoutlen = 500
@@ -81,3 +81,4 @@ vim.o.showtabline = 2
 vim.o.showmode = false
 -- 配置剪切板
 vim.opt.clipboard = "unnamedplus"
+vim.opt.foldtext = "v:lua.require('utils.simple_fold').simple_fold()"

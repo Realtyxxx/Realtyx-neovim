@@ -40,6 +40,16 @@ formatter.setup({
         }
       end,
     },
+    python = {
+      -- autopep8
+      function()
+        return {
+          exe = "autopep8",
+          args = { "-" },
+          stdin = 1,
+        }
+      end,
+    },
   },
 })
 
@@ -48,7 +58,7 @@ vim.api.nvim_exec(
   [[
 augroup FormatAutogroup
   autocmd!
-  autocmd BufWritePost *.js,*.rs,*.lua FormatWrite
+  autocmd BufWritePost *.js,*.rs,*.lua,*.py FormatWrite
 augroup END
 ]],
   true

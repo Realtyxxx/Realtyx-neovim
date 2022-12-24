@@ -4,26 +4,15 @@ local myAutoGroup = vim.api.nvim_create_augroup("myAutoGroup", {
 
 local autocmd = vim.api.nvim_create_autocmd
 
--- nvim-tree 自动关闭
-autocmd("BufEnter", {
-  nested = true,
-  group = myAutoGroup,
-  callback = function()
-    if #vim.api.nvim_list_wins() == 1 and vim.api.nvim_buf_get_name(0):match("NvimTree_") ~= nil then
-      vim.cmd("quit")
-    end
-  end,
-})
-
 -- 自动切换输入法，需要安装 im-select
 -- https://github.com/daipeihust/im-select
 autocmd("InsertLeave", {
   group = myAutoGroup,
-  callback = require("utils.im-select").macInsertLeave,
+  callback = require("utils.im-select").insertLeave,
 })
 autocmd("InsertEnter", {
   group = myAutoGroup,
-  callback = require("utils.im-select").macInsertEnter,
+  callback = require("utils.im-select").insertEnter,
 })
 
 -- 进入Terminal 自动进入插入模式
@@ -36,7 +25,9 @@ autocmd("TermOpen", {
 autocmd("BufWritePre", {
   group = myAutoGroup,
   pattern = { "*.lua", "*.py", "*.sh" },
-  callback = vim.lsp.buf.formatting_sync,
+  callback = function()
+    vim.lsp.buf.format()
+  end,
 })
 
 -- 修改lua/plugins.lua 自动更新插件
@@ -70,3 +61,17 @@ autocmd("BufEnter", {
       + "r" -- But do continue when pressing enter.
   end,
 })
+
+-- 保存Fold
+-- local saveable_type = { "*.lua", "*.js", "*.jsx", "*.ts", "*.tsx" }
+
+-- autocmd("BufWinEnter", {
+--   group = myAutoGroup,
+--   pattern = saveable_type,
+--   command = "silent! loadview",
+-- })
+-- autocmd("BufWrite", {
+--   group = myAutoGroup,
+--   pattern = saveable_type,
+--   command = "mkview",
+-- })

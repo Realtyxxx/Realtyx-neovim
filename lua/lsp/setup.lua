@@ -1,9 +1,58 @@
--- local lsp_installer = require("nvim-lsp-installer")
-require("nvim-lsp-installer").setup({
-  -- 自动安装 Language Servers
-  automatic_installation = true,
+local status, mason = pcall(require, "mason")
+if not status then
+  vim.notify("没有找到 mason")
+  return
+end
+
+local status, mason_config = pcall(require, "mason-lspconfig")
+if not status then
+  vim.notify("没有找到 mason-lspconfig")
+  return
+end
+
+local status, lspconfig = pcall(require, "lspconfig")
+if not status then
+  vim.notify("没有找到 lspconfig")
+  return
+end
+
+-- :h mason-default-settings
+-- ~/.local/share/nvim/mason
+mason.setup({
+  ui = {
+    icons = {
+      package_installed = "✓",
+      package_pending = "➜",
+      package_uninstalled = "✗",
+    },
+  },
 })
-local lspconfig = require("lspconfig")
+
+-- mason-lspconfig uses the `lspconfig` server names in the APIs it exposes - not `mason.nvim` package names
+-- https://github.com/williamboman/mason-lspconfig.nvim/blob/main/doc/server-mapping.md
+mason_config.setup({
+  ensure_installed = {
+    "sumneko_lua",
+    "tsserver",
+    -- "tailwindcss",
+    "bashls",
+    "cssls",
+    "dockerls",
+    "emmet_ls",
+    "html",
+    "jsonls",
+    "pyright",
+    "rust_analyzer",
+    "taplo",
+    "yamlls",
+    "gopls",
+    "clangd",
+    "texlab",
+    "cmake",
+    "marksman",
+  },
+  automatic_installation = false,
+})
 
 -- 安装列表
 -- { key: 服务器名， value: 配置文件 }
@@ -17,10 +66,16 @@ local servers = {
   cssls = require("lsp.config.css"),
   emmet_ls = require("lsp.config.emmet"),
   jsonls = require("lsp.config.json"),
-  tsserver = require("lsp.config.ts"),
-  rust_analyzer = require("lsp.config.rust"),
+  tsserver = require("lsp.config.typescript"),
   yamlls = require("lsp.config.yamlls"),
-  -- remark_ls = require("lsp.config.markdown"),
+  dockerls = require("lsp.config.docker"),
+  -- tailwindcss = require("lsp.config.tailwindcss"),
+  rust_analyzer = require("lsp.config.rust"),
+  taplo = require("lsp.config.taplo"), -- toml
+  gopls = require("lsp.config.gopls"),
+  marksman = require("lsp.config.markdown"),
+  -- clangd = require("lsp.config.clangd"),
+  cmake = require("lsp.config.cmake"),
 }
 
 for name, config in pairs(servers) do
@@ -32,3 +87,5 @@ for name, config in pairs(servers) do
     lspconfig[name].setup({})
   end
 end
+
+require("lsp.ui")

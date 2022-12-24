@@ -11,19 +11,21 @@ if not status then
 end
 
 vim.g.nvim_tree_respect_buf_cwd = 1
+
 project.setup({
-  detection_methods = { "pattern" },
+  detection_methods = { "lsp", "pattern" },
   patterns = {
-    "README.md",
     "Cargo.toml",
     "package.json",
     ".sln",
     ".git",
+    "README.md",
     "_darcs",
     ".hg",
     ".bzr",
     ".svn",
     "Makefile",
+    "CmakeList.txt",
   },
 })
 
