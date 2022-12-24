@@ -351,7 +351,12 @@ packer.startup({
     use("bfrg/vim-cpp-modern")
 
     -- bookmarks
-    use("MattesGroeger/vim-bookmarks")
+    use({
+      "MattesGroeger/vim-bookmarks",
+      config = function()
+        require("plugin-config.vim-bookmarks")
+      end,
+    })
 
     -- CodeRunner
     use({ "CRAG666/code_runner.nvim", requires = "nvim-lua/plenary.nvim" })
