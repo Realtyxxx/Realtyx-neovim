@@ -1,3 +1,7 @@
+--[[ 
+-- unused 
+-- changed to use clangd_extensions to use 
+]]
 local common = require("lsp.common-config")
 local opts = {
   capabilities = common.capabilities,

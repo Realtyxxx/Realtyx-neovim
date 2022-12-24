@@ -74,7 +74,7 @@ local servers = {
   taplo = require("lsp.config.taplo"), -- toml
   gopls = require("lsp.config.gopls"),
   marksman = require("lsp.config.markdown"),
-  clangd = require("lsp.config.clangd"),
+  -- clangd = require("lsp.config.clangd"),
   cmake = require("lsp.config.cmake"),
 }
 

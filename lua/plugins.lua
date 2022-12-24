@@ -358,6 +358,14 @@ packer.startup({
       end,
     })
 
+    -- clangd
+    use({
+      "p00f/clangd_extensions.nvim",
+      config = function()
+        require("plugin-config.clangd_extensions")
+      end,
+    })
+
     -- CodeRunner
     use({ "CRAG666/code_runner.nvim", requires = "nvim-lua/plenary.nvim" })
 
