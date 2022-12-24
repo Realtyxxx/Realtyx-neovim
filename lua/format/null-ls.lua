@@ -74,8 +74,13 @@ null_ls.setup({
     --   command = "markdownlint-cli2",
     --   args = { "$FILENAME", "#node_modules" },
     -- }),
-    --
+
+    -- python
+    diagnostics.pylint,
+    -- diagnostics.flake8,
+
     -- code actions ---------------------
+
     code_actions.gitsigns,
     -- code_actions.eslint.with({
     --   prefer_local = "node_modules/.bin",

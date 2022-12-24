@@ -50,7 +50,10 @@ mason_config.setup({
     "texlab",
     "cmake",
     "marksman",
-    "jedi-language-server", -- python
+    --python
+    -- "clangd",
+    -- "jedi_language_server",
+    "pylsp",
   },
   automatic_installation = false,
 })
@@ -76,7 +79,8 @@ local servers = {
   marksman = require("lsp.config.markdown"),
   -- clangd = require("lsp.config.clangd"),
   cmake = require("lsp.config.cmake"),
-  jedi_language_server = require("lsp.config.python"),
+  pylsp = require("lsp.config.python"),
+  -- jedi_language_server = require("lsp.config.python"),
 }
 
 for name, config in pairs(servers) do
