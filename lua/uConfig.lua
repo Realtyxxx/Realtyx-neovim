@@ -158,8 +158,9 @@ local M = {
     find_files = "<C-p><C-f>",
     live_grep = "<C-p><C-g>",
     git_status = "<C-p><C-s>",
+
     oldfiles = "<C-p><C-o>",
-    current_buffer_fuzzy_find = "<C-p><C-c>",
+    current_buffer_fuzzy_find = "<C-p><C-z>",
     projects = "<C-p><C-p>",
 
     -- 上下移动
@@ -252,7 +253,7 @@ local M = {
 
   -- clangd
   clangd = {
-    ClangdSwitchSourceHeader = "<C-s>",
+    ClangdSwitchSourceHeader = "<leader>s",
   },
 }
 
