@@ -50,6 +50,7 @@ mason_config.setup({
     "texlab",
     "cmake",
     "marksman",
+    "jedi-language-server", -- python
   },
   automatic_installation = false,
 })
@@ -61,7 +62,6 @@ mason_config.setup({
 local servers = {
   sumneko_lua = require("lsp.config.lua"), -- lua/lsp/config/lua.lua
   bashls = require("lsp.config.bash"),
-  pyright = require("lsp.config.pyright"),
   html = require("lsp.config.html"),
   cssls = require("lsp.config.css"),
   emmet_ls = require("lsp.config.emmet"),
@@ -76,6 +76,7 @@ local servers = {
   marksman = require("lsp.config.markdown"),
   -- clangd = require("lsp.config.clangd"),
   cmake = require("lsp.config.cmake"),
+  jedi_language_server = require("lsp.config.python"),
 }
 
 for name, config in pairs(servers) do
