@@ -160,6 +160,7 @@ local M = {
     git_status = "<C-p><C-s>",
 
     oldfiles = "<C-p><C-o>",
+    current_buffer_tags = "<C-p><C-t>",
     current_buffer_fuzzy_find = "<C-p><C-z>",
     projects = "<C-p><C-p>",
 
