@@ -97,7 +97,7 @@ null_ls.setup({
     vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format({async=true})']])
     -- vim.cmd([[command! Format execute 'Format']])
     -- if client.reserver_capabilities.document_formatting then
-    vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format({async=true})")
+    -- vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format({async=true})")
     -- end
   end,
 })

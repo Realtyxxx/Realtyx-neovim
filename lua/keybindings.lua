@@ -300,8 +300,8 @@ pluginKeys.gitsigns_on_attach = function(bufnr)
     vim.keymap.set(mode, l, r, opts)
   end
 
-  -- Navigation
-  map("n", "<leader>gj", function()
+  -- navigation
+  map("n", "]c", function()
     if vim.wo.diff then
       return "]c"
     end
@@ -313,7 +313,7 @@ pluginKeys.gitsigns_on_attach = function(bufnr)
     expr = true,
   })
 
-  map("n", "<leader>gk", function()
+  map("n", "[c", function()
     if vim.wo.diff then
       return "[c"
     end
@@ -325,18 +325,28 @@ pluginKeys.gitsigns_on_attach = function(bufnr)
     expr = true,
   })
 
+  -- hunk 就是存入缓冲区，stage就是缓冲区
+  -- 暂存 光标处的更改
   map({ "n", "v" }, "<leader>gs", ":Gitsigns stage_hunk<CR>")
+  -- 暂存文件内所有更改
   map("n", "<leader>gS", gs.stage_buffer)
-  map("n", "<leader>gu", gs.undo_stage_hunk)
+  -- 回退上一个暂存
+  map("n", "<leader>gu", gs.undo_stage_hunk) -- undo
+  -- 撤销光标所在行的更改
   map({ "n", "v" }, "<leader>gr", ":Gitsigns reset_hunk<CR>")
+  -- 回退所有更改
   map("n", "<leader>gR", gs.reset_buffer)
+  -- 查看更改内容 (有标记才能查看)
   map("n", "<leader>gp", gs.preview_hunk)
+  -- 查看之前的commit
   map("n", "<leader>gb", function()
     gs.blame_line({
       full = true,
     })
   end)
+  -- 查看更改 diff
   map("n", "<leader>gd", gs.diffthis)
+  -- 查看和主分支的更改
   map("n", "<leader>gD", function()
     gs.diffthis("~")
   end)
