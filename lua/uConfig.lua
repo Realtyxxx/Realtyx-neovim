@@ -145,10 +145,11 @@ local M = {
     next = "<C-l>",
     close = "<C-w>",
     -- close = "<leader>bc",
-    close_left = "<leader>bh",
-    close_right = "<leader>bl",
-    close_others = "<leader>bo",
-    close_pick = "<leader>bp",
+    -- close_left = "<leader>bh",
+    -- close_right = "<leader>bl",
+    -- close_others = "<leader>bo",
+    -- close_pick = "<leader>bp",
+    pin = "<leader>bp",
   },
 
   telescope = {

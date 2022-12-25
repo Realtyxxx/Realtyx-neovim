@@ -367,7 +367,13 @@ packer.startup({
     })
 
     -- CodeRunner
-    use({ "CRAG666/code_runner.nvim", requires = "nvim-lua/plenary.nvim" })
+    use({
+      "CRAG666/code_runner.nvim",
+      requires = "nvim-lua/plenary.nvim",
+      config = function()
+        require("plugin-config.code-runner")
+      end,
+    })
 
     if paccker_bootstrap then
       packer.sync()

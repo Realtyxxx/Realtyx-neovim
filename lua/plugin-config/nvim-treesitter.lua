@@ -9,7 +9,20 @@ treesitter.setup({
   sync_install = false,
   -- 安装 language parser
   -- :TSInstallInfo 命令查看支持的语言
-  -- ensure_installed = { "json", "html", "css", "vim", "lua", "javascript", "typescript", "tsx", "markdown" },
+  ensure_installed = {
+    "json",
+    "html",
+    "css",
+    "vim",
+    "lua",
+    "javascript",
+    "typescript",
+    "tsx",
+    "markdown",
+    "cpp",
+    "cuda",
+    "python",
+  },
   -- ensure_installed = "maintained",
 
   -- 启用代码高亮模块
@@ -22,7 +35,7 @@ treesitter.setup({
   },
   -- 启用增量选择模块
   incremental_selection = {
-    enable = false,
+    enable = true,
     keymaps = {
       init_selection = "<CR>",
       node_incremental = "<CR>",
@@ -37,7 +50,7 @@ treesitter.setup({
   -- p00f/nvim-ts-rainbow
   rainbow = {
     enable = true,
-    -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
+    disable = { "jsx" }, -- list of languages you want to disable the plugin for
     extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
     max_file_lines = 10000, -- Do not enable for files with more than n lines, int
     colors = {
