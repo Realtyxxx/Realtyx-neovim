@@ -195,8 +195,10 @@ local M = {
     enable = true,
     -- Normal 模式快捷键
     toggler = {
-      line = "gcc", -- 行注释
-      block = "gbc", -- 块注释
+      -- line = "gcc", -- 行注释
+      -- block = "gbc", -- 块注释
+      line = "cc", -- 行注释
+      block = "cs", -- 块注释
     },
     -- Visual 模式
     opleader = {
@@ -204,6 +206,12 @@ local M = {
       block = "gb", -- 块注释
       -- line = "cc",
       -- bock = "cs",
+    },
+    -- Extral 模式
+    extra = {
+      above = "cO",
+      below = "co",
+      eol = "ca",
     },
   },
 

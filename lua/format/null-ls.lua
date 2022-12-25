@@ -76,7 +76,8 @@ null_ls.setup({
     -- }),
 
     -- python
-    diagnostics.pylint,
+    -- diagnostics.pylint,
+    diagnostics.mypy,
     -- diagnostics.flake8,
 
     -- code actions ---------------------

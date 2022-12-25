@@ -13,8 +13,8 @@ end
 
 local opts = {
   mappings = {
-    -- 关闭了extra快捷键
-    extra = false,
+    basic = true,
+    extra = true,
   },
 
   -- Normal 模式快捷键
@@ -26,6 +26,15 @@ local opts = {
   opleader = {
     line = uComment.opleader.line,
     bock = uComment.opleader.block,
+  },
+  ---extra  模式
+  extra = {
+    ---Add comment on the line above
+    above = uComment.extra.above,
+    ---Add comment on the line below
+    below = uComment.extra.below,
+    ---Add comment at the end of line
+    eol = uComment.extra.eol,
   },
 
   -- https://github.com/JoosepAlviste/nvim-ts-context-commentstring
