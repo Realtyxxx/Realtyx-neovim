@@ -1,4 +1,4 @@
-local colorscheme = "duskfox"
+local colorscheme = "carbonfox"
 -- tokyonight
 -- OceanicNext
 -- gruvbox

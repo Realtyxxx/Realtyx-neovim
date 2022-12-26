@@ -54,7 +54,7 @@ formatter.setup({
 })
 
 -- format on save
-vim.api.nvim_exec(
+--[[ vim.api.nvim_exec(
   [[
 augroup FormatAutogroup
   autocmd!
@@ -62,4 +62,4 @@ augroup FormatAutogroup
 augroup END
 ]],
   true
-)
+) ]]

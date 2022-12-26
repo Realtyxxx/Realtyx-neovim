@@ -92,9 +92,9 @@ null_ls.setup({
   -- #{m}: message
   -- #{s}: source name (defaults to null-ls if not specified)
   -- #{c}: code (if available)
-  diagnostics_format = "[#{s}] #{m}",
+  diagnostics_format = "[#{s}] #{m} [#{c}]",
   on_attach = function(_)
-    -- vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format({async=true})']])
+    vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format({async=true})']])
     -- vim.cmd([[command! Format execute 'Format']])
     -- if client.reserver_capabilities.document_formatting then
     -- vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format({async=true})")

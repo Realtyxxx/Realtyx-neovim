@@ -209,9 +209,9 @@ pluginKeys.mapLSP = function(mapbuf)
   -- Format
   -- keymap("n", keys.format, ":Format<CR>")
   if vim.fn.has("nvim-0.8") == 1 then
-    mapbuf("n", lsp.format, "<cmd>lua vim.lsp.buf.format({ async = true })<CR>")
+    mapbuf({ "n", "v" }, lsp.format, "<cmd>lua vim.lsp.buf.format({async = true})<CR>")
   else
-    mapbuf("n", lsp.format, "<cmd>lua vim.lsp.buf.formatting()<CR>")
+    mapbuf({ "n", "v" }, lsp.format, "<cmd>lua vim.lsp.buf.formatting()<CR>")
   end
 
   --[[
