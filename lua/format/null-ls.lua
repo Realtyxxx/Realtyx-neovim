@@ -14,7 +14,7 @@ null_ls.setup({
   sources = {
     -- Formatting ---------------------
     --  brew install shfmt
-    -- formatting.shfmt,
+    formatting.shfmt,
     -- StyLua
     formatting.stylua,
     -- frontend
