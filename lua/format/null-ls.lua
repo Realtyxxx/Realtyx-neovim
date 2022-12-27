@@ -14,7 +14,7 @@ null_ls.setup({
   sources = {
     -- Formatting ---------------------
     --  brew install shfmt
-    formatting.shfmt,
+    -- formatting.shfmt,
     -- StyLua
     formatting.stylua,
     -- frontend
@@ -39,7 +39,7 @@ null_ls.setup({
     }),
     -- rustfmt
     -- rustup component add rustfmt
-    formatting.rustfmt,
+    -- formatting.rustfmt,
     -- Python
     -- pip install black
     -- asdf reshim python
@@ -63,10 +63,12 @@ null_ls.setup({
     -- diagnostics.eslint.with({
     --   prefer_local = "node_modules/.bin",
     -- }),
+
     -- npm install -g eslint_d
-    diagnostics.eslint_d.with({
-      prefer_local = "node_modules/.bin",
-    }),
+    -- diagnostics.eslint_d.with({
+    --   prefer_local = "node_modules/.bin",
+    -- }),
+
     -- diagnostics.markdownlint,
     -- markdownlint-cli2
     -- diagnostics.markdownlint.with({
@@ -76,7 +78,7 @@ null_ls.setup({
     -- }),
 
     -- python
-    -- diagnostics.pylint,
+    diagnostics.pylint,
     diagnostics.mypy,
     -- diagnostics.flake8,
 
@@ -87,7 +89,7 @@ null_ls.setup({
     --   prefer_local = "node_modules/.bin",
     -- }),
     -- npm install -g eslint_d
-    code_actions.eslint_d,
+    -- code_actions.eslint_d,
   },
   -- #{m}: message
   -- #{s}: source name (defaults to null-ls if not specified)

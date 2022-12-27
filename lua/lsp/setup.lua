@@ -51,9 +51,9 @@ mason_config.setup({
     "cmake",
     "marksman",
     --python
-    -- "clangd",
-    -- "jedi_language_server",
+    "jedi_language_server",
     "pylsp",
+    "pyright",
   },
   automatic_installation = false,
 })
@@ -79,8 +79,9 @@ local servers = {
   marksman = require("lsp.config.markdown"),
   -- clangd = require("lsp.config.clangd"),
   cmake = require("lsp.config.cmake"),
-  pylsp = require("lsp.config.python"),
+  -- pyright = require("lsp.config.python"),
   -- jedi_language_server = require("lsp.config.python"),
+  pylsp = require("lsp.config.python"),
 }
 
 for name, config in pairs(servers) do

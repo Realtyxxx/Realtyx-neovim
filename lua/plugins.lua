@@ -205,10 +205,9 @@ packer.startup({
     -- mkdnflow.nvim
     use({
       "jakewvincent/mkdnflow.nvim",
-      ft = { "markdown" },
-      commit = "739b8b93530adbd5dfb2d3abff66752637442d41",
+      -- rocks = "luautf8", -- Ensures optional luautf8 dependency is installed
       config = function()
-        require("plugin-config.mkdnflow")
+        require("mkdnflow").setup({})
       end,
     })
 

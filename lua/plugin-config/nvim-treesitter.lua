@@ -6,7 +6,7 @@ end
 
 require("nvim-treesitter.install").prefer_git = true
 treesitter.setup({
-  sync_install = false,
+  sync_install = true,
   -- 安装 language parser
   -- :TSInstallInfo 命令查看支持的语言
   ensure_installed = {
@@ -19,6 +19,8 @@ treesitter.setup({
     "typescript",
     "tsx",
     "markdown",
+    "bash",
+    "c",
     "cpp",
     "cuda",
     "python",
