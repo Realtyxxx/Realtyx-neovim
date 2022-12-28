@@ -1,4 +1,4 @@
--- 自动安装 Packer.nvim
+-- 自动安装 Packer.nvimplug
 -- 插件安装目录
 -- ~/.local/share/nvim/site/pack/packer/
 local fn = vim.fn
@@ -274,6 +274,9 @@ packer.startup({
     -- OceanicNext
     use({ "mhartington/oceanic-next", event = "VimEnter" })
 
+    -- molokai
+    use("tomasr/molokai")
+
     -- gruvbox
     use({
       "ellisonleao/gruvbox.nvim",
@@ -283,8 +286,8 @@ packer.startup({
     -- zephyr
     -- use("glepnir/zephyr-nvim")
 
-    -- nord
-    use("shaunsingh/nord.nvim")
+    -- -- nord
+    -- use("shaunsingh/nord.nvim")
 
     -- onedark
     use("ful1e5/onedark.nvim")

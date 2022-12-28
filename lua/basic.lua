@@ -1,3 +1,4 @@
+vim.o.path = ".,/usr/bin/,/usr/local/"
 -- utf8
 vim.g.encoding = "UTF-8"
 vim.o.fileencoding = "utf-8"

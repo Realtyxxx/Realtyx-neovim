@@ -70,12 +70,15 @@ else
 end
 
 ------------tyx  move from init.vim--------------------
+-- SymbolsOutline
 map("n", "<F4>", ":SymbolsOutline<CR>", opt)
+map("n", "<A-n>", ":SymbolsOutline<CR>", opt)
+-- Markdown
 map("n", "<F7>", ":MarkdownPreviewToggle<CR>", opt)
+-- 全选
 map("n", "<C-a>", "gg<S-v>G", opt)
+-- habits
 -- map("i", "jj", "<Esc>", opt)
-map("n", "<leader>sl", ":source ~/.config/nvim/init.lua<CR> : source ~/.config/nvim/lua/keybindings.lua<CR>", opt)
-map("n", "<leader>nl", ":vs ~/.config/nvim/init.lua<CR>", opt)
 -- Code Runner
 map("n", "<f10>c", ":RunCode <CR>", opt)
 map("n", "<f10>f", ":RunFile float <CR>", opt)
@@ -210,8 +213,10 @@ pluginKeys.mapLSP = function(mapbuf)
   -- keymap("n", keys.format, ":Format<CR>")
   if vim.fn.has("nvim-0.8") == 1 then
     mapbuf({ "n", "v" }, lsp.format, "<cmd>lua vim.lsp.buf.format({async = true})<CR>")
+    mapbuf({ "n", "v" }, "<leader>f", "<cmd>lua vim.lsp.buf.format({async = true})<CR>")
   else
     mapbuf({ "n", "v" }, lsp.format, "<cmd>lua vim.lsp.buf.formatting()<CR>")
+    mapbuf({ "n", "v" }, "<leader>f", "<cmd>lua vim.lsp.buf.formatting<CR>")
   end
 
   --[[
