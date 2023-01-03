@@ -330,17 +330,13 @@ packer.startup({
     -- go
     use("leoluz/nvim-dap-go")
 
-    --[[ not work
-
     use({
       "mfussenegger/nvim-dap-python",
       requires = { "mfussenegger/nvim-dap" },
-      config = function()
-        require("dap-python").setup("/Users/nn/.local/share/nvim/mason/bin/debugpy")
-      end,
+      -- config = function()
+      --   require("dap-python").setup("/Users/nn/.local/share/nvim/mason/bin/debugpy")
+      -- end,
     })
-
-    --]]
 
     -- use("jbyuki/one-small-step-for-vimkind")
     --[[ use("dstein64/vim-startuptime") ]]
