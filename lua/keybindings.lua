@@ -80,7 +80,7 @@ map("n", "<C-a>", "gg<S-v>G", opt)
 -- habits
 -- map("i", "jj", "<Esc>", opt)
 -- Code Runner
-map("n", "<f10>c", ":RunCode <CR>", opt)
+-- map("n", "<f10>c", ":RunCode <CR>", opt)
 map("n", "<f10>f", ":RunFile float <CR>", opt)
 map("n", "<f10>b", ":RunFile buf <CR>", opt)
 map("n", "<f10>t", ":RunFile toggleterm <CR>", opt)

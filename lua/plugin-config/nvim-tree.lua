@@ -127,7 +127,7 @@ nvim_tree.setup({
   },
   view = {
     -- 宽度
-    width = 34,
+    width = 35,
     -- 也可以 'right'
     side = "left",
     -- 隐藏根目录
@@ -135,8 +135,8 @@ nvim_tree.setup({
     -- 自定义列表中快捷键
     mappings = {
       -- 只用内置快捷键
-      custom_only = true,
-      list = list_keys,
+      custom_only = false,
+      -- list = list_keys,
     },
     -- 不显示行数
     number = false,

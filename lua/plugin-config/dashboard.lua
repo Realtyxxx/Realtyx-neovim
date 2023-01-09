@@ -7,7 +7,7 @@ end
 db.custom_footer = {
   "",
   "",
-  "https://github.com/nshen/learn-neovim-lua",
+  "https://github.com/Realtyxxx/learn-neovim-lua",
 }
 
 db.custom_center = {
