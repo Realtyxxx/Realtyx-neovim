@@ -129,8 +129,8 @@ if keys.s_windows ~= nil and keys.s_windows.enable then
   -- 比例控制
   keymap("n", skey.width_decrease, ":vertical resize -10<CR>")
   keymap("n", skey.width_increase, ":vertical resize +10<CR>")
-  keymap("n", skey.height_decrease, ":vertical resize -10<CR>")
-  keymap("n", skey.height_increase, ":vertical resize +10<CR>")
+  keymap("n", skey.height_decrease, ":horizontal resize -10<CR>")
+  keymap("n", skey.height_increase, ":horizontal resize +10<CR>")
   keymap("n", skey.size_equal, "<C-w>=")
 end
 

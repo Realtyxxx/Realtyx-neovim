@@ -17,6 +17,7 @@ end
 keymap("n", uTree.toggle, ":NvimTreeToggle<CR>")
 
 -- 列表操作快捷键
+--[[ 
 local list_keys = { -- 打开文件或文件夹
   {
     key = uTree.edit,
@@ -102,7 +103,7 @@ local list_keys = { -- 打开文件或文件夹
     key = uTree.dir_up,
     action = "dir_up",
   },
-}
+} ]]
 
 nvim_tree.setup({
   open_on_setup = true,
@@ -127,7 +128,7 @@ nvim_tree.setup({
   },
   view = {
     -- 宽度
-    width = 35,
+    width = 45,
     -- 也可以 'right'
     side = "left",
     -- 隐藏根目录
