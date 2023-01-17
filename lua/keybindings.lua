@@ -90,6 +90,9 @@ map("n", tc.TodoTelescope, ":TodoTelescope <CR>", opt)
 map("n", tc.TodoLocList, ":TodoLocList <CR>", opt)
 -- clangd
 map("n", uConfig.clangd.ClangdSwitchSourceHeader, ":ClangdSwitchSourceHeader<CR>", opt)
+-- hop
+map("n", "f", ":HopWord<CR>", opt)
+map("n", "F", ":HopLine<CR>", opt)
 
 -------------------- fix ------------------------------
 

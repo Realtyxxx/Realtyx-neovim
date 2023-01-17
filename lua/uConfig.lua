@@ -97,9 +97,7 @@ local M = {
 
     enable = true,
 
-    -- toggle = "<leader>f",
     toggle = "<A-m>",
-    -- toggle = "<leader>m",
     edit = { "o", "<2-LeftMouse>" },
     system_open = "<CR>",
     -- v分屏打开文件
