@@ -20,7 +20,7 @@ require("clangd_extensions").setup({
     -- These apply to the default ClangdSetInlayHints command
     inlay_hints = {
       -- Only show inlay hints for the current line
-      only_current_line = false,
+      only_current_line = true,
       -- Event which triggers a refersh of the inlay hints.
       -- You can make this "CursorMoved" or "CursorMoved,CursorMovedI" but
       -- not that this may cause  higher CPU usage.
@@ -38,7 +38,7 @@ require("clangd_extensions").setup({
       -- padding from the left if max_len_align is true
       max_len_align_padding = 1,
       -- whether to align to the extreme right or not
-      right_align = true,
+      right_align = false,
       -- padding from the right if right_align is true
       right_align_padding = 7,
       -- The color of the hints

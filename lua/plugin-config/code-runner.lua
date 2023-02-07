@@ -31,7 +31,7 @@ require("code_runner").setup({
     blend = 0,
   },
   filetype_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/code_runner.nvim/lua/code_runner/code_runner.json",
-  filetype = {
+  --[[   filetype = {
     -- java = "cd $dir && javac $fileName && java $fileNameWithoutExt",
     -- python = "python3 -u",
     -- typescript = "deno run",
@@ -88,7 +88,7 @@ require("code_runner").setup({
     fortran_modern = "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
     fortran_fixed_form = "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
     fortran = "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-  },
+  }, ]]
   project_path = vim.fn.stdpath("data")
     .. "/site/pack/packer/start/code_runner.nvim/lua/code_runner/project_manager.json",
   project = {},
