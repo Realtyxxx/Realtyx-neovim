@@ -155,10 +155,10 @@ db.setup({
         key = "f",
       },
       {
-        desc = " Apps",
+        desc = " Project",
         group = "DiagnosticHint",
-        action = "Telescope app",
-        key = "a",
+        action = "Telescope projects",
+        key = "p",
       },
       {
         desc = " dotfiles",
