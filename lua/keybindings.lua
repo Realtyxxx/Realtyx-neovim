@@ -72,7 +72,7 @@ end
 ------------tyx  move from init.vim--------------------
 -- SymbolsOutline
 map("n", "<F4>", ":SymbolsOutline<CR>", opt)
-map("n", "<A-n>", ":SymbolsOutline<CR>", opt)
+map("n", "<M-n>", ":SymbolsOutline<CR>", opt)
 -- Markdown
 map("n", "<F7>", ":MarkdownPreviewToggle<CR>", opt)
 -- 全选
@@ -159,10 +159,10 @@ keymap("t", keys.terminal_to_normal, "<C-\\><C-n>")
 -- Terminal相关
 -- map("n", "st", ":sp | terminal<CR>", opt)
 -- map("n", "stv", ":vsp | terminal<CR>", opt)
--- map("t", "<A-h>", [[ <C-\><C-N><C-w>h ]], opt)
--- map("t", "<A-j>", [[ <C-\><C-N><C-w>j ]], opt)
--- map("t", "<A-k>", [[ <C-\><C-N><C-w>k ]], opt)
--- map("t", "<A-l>", [[ <C-\><C-N><C-w>l ]], opt)
+-- map("t", "<M-h>", [[ <C-\><C-N><C-w>h ]], opt)
+-- map("t", "<M-j>", [[ <C-\><C-N><C-w>j ]], opt)
+-- map("t", "<M-k>", [[ <C-\><C-N><C-w>k ]], opt)
+-- map("t", "<M-l>", [[ <C-\><C-N><C-w>l ]], opt)
 -- map("t", "<leader>h", [[ <C-\><C-N><C-w>h ]], opt)
 -- map("t", "<leader>j", [[ <C-\><C-N><C-w>j ]], opt)
 -- map("t", "<leader>k", [[ <C-\><C-N><C-w>k ]], opt)

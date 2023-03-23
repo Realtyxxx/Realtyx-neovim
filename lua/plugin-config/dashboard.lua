@@ -15,7 +15,7 @@ db.setup({
         desc = "⌨️  keybindings",
         group = "@property",
         action = "edit ~/.config/nvim/lua/keybindings.lua",
-        key = "k",
+        key = "b",
       },
       {
         icon = "📂 ",

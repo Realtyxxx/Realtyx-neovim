@@ -13,3 +13,7 @@
 - packer init first
 - nvim-treesitter ensure_installed
 - mason_config ensure_installed
+- 
+## DIF:
+- use <S-?> to replace <A->
+- add configurations for neovide

@@ -24,8 +24,8 @@ local M = {
     n_v_10j = "<C-d>",
 
     -- cmp 快捷键
-    cmp_complete = "<A-.>",
-    cmp_abort = "<A-,>",
+    cmp_complete = "<M-.>",
+    cmp_abort = "<M-,>",
     cmp_confirm = "<CR>",
     cmp_scroll_doc_up = "<C-u>",
     cmp_scroll_doc_down = "<C-d>",
@@ -49,10 +49,10 @@ local M = {
       close_others = "so",
 
       -- 窗口跳转
-      jump_left = "<A-h>",
-      jump_right = "<A-l>",
-      jump_up = "<A-k>",
-      jump_down = "<A-j>",
+      jump_left = "<M-h>",
+      jump_right = "<M-l>",
+      jump_up = "<M-k>",
+      jump_down = "<M-j>",
 
       -- <leader> + hjkl 窗口之间跳转
       -- jump_left = "<space>h",
@@ -97,7 +97,7 @@ local M = {
 
     enable = true,
 
-    toggle = "<A-m>",
+    toggle = "<M-m>",
     edit = { "o", "<2-LeftMouse>" },
     system_open = "<CR>",
     -- v分屏打开文件
