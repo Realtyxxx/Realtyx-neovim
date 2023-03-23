@@ -1,6 +1,6 @@
 if vim.g.neovide then
   -- !!!change use mac's meta
-  vim.g.neovide_input_macos_alt_is_meta = true
+  -- vim.g.neovide_input_macos_alt_is_meta = true
 
   -- vim.o.guifont = "Source Code Pro:h14" -- text below applies for VimScript
   --https://neovide.dev/features.html
@@ -12,7 +12,8 @@ if vim.g.neovide then
   vim.g.neovide_hide_mouse_when_typing = false
   -- Helper function for transparency formatting
   local alpha = function()
-    return string.format("%x", math.floor((255 * vim.g.transparency) or 0.8))
+    local ts = 0.8
+    return string.format("%x", math.floor((255 * vim.g.transparency) or ts))
   end
   -- -- g:neovide_transparency should be 0 if you want to unify transparency of content and title bar.
   vim.g.neovide_transparency = 0.0
@@ -49,7 +50,7 @@ if vim.g.neovide then
   vim.g.neovide_cursor_animate_in_insert_mode = true
 
   -- cursor particles
-  vim.g.neovide_cursor_vfx_mode = "wireframe" --[railgun, ripple, sonicboom, pixiedust, torpedo, wireframe]
+  vim.g.neovide_cursor_vfx_mode = "sonicboom" --[railgun, ripple, sonicboom, pixiedust, torpedo, wireframe]
   vim.g.neovide_cursor_vfx_opacity = 200.0
   vim.g.neovide_cursor_vfx_particle_lifetime = 1.2
   vim.g.neovide_cursor_vfx_particle_density = 7.0
@@ -57,7 +58,7 @@ if vim.g.neovide then
   -- -- only for railgun
   vim.g.neovide_cursor_vfx_particle_phase = 1.5
   vim.g.neovide_cursor_vfx_particle_curl = 1.0
-end
+end --Neovide
 
 vim.o.path = ".,/usr/bin/,/usr/local/"
 -- utf8

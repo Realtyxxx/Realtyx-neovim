@@ -73,6 +73,7 @@ end
 -- SymbolsOutline
 map("n", "<F4>", ":SymbolsOutline<CR>", opt)
 map("n", "<M-n>", ":SymbolsOutline<CR>", opt)
+map("n", "<leader>n", ":SymbolsOutline<CR>", opt)
 -- Markdown
 map("n", "<F7>", ":MarkdownPreviewToggle<CR>", opt)
 -- 全选

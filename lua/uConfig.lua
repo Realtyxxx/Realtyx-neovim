@@ -93,7 +93,7 @@ local M = {
 
   enable_magic_search = true,
 
-  nvimTree = {
+  nvimTree = { -- not using
 
     enable = true,
 
