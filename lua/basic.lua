@@ -1,6 +1,6 @@
 if vim.g.neovide then
   -- !!!change use mac's meta
-  -- vim.g.neovide_input_macos_alt_is_meta = true
+  vim.g.neovide_input_macos_alt_is_meta = true
 
   -- vim.o.guifont = "Source Code Pro:h14" -- text below applies for VimScript
   --https://neovide.dev/features.html
