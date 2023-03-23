@@ -1,5 +1,6 @@
 local colorscheme = "habamax"
 -- local colorscheme = "duskfox"
+-- local colorscheme = "tokyonight-storm"
 -- tokyonight
 -- OceanicNext
 -- gruvbox

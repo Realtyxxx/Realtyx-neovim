@@ -21,7 +21,7 @@ require("format.setup")
 -- DAP
 require("dap.setup")
 
-require("plugin-config.instant-markdown")
+-- require("plugin-config.instant-markdown")
 -- require("dap.vimspector")
 -- utils
 -- 复制到windows剪贴板

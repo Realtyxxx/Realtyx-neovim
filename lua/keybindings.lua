@@ -94,6 +94,8 @@ map("n", uConfig.clangd.ClangdSwitchSourceHeader, ":ClangdSwitchSourceHeader<CR>
 -- hop
 map("n", "f", ":HopWord<CR>", opt)
 map("n", "F", ":HopLine<CR>", opt)
+--Dashboard
+map("n", "<leader>db", ":Dashboard<CR>", opt)
 
 -------------------- fix ------------------------------
 

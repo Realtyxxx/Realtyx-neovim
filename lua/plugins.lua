@@ -104,6 +104,7 @@ packer.startup({
     -- dashboard-nvim
     use({
       "glepnir/dashboard-nvim",
+      requires = { "nvim-tree/nvim-web-devicons" },
       config = function()
         require("plugin-config.dashboard")
       end,

@@ -11,9 +11,14 @@ db.setup({
       enable = true,
     },
     shortcut = {
-      { desc = " keybindings", group = "@property", action = "edit ~/.config/nvim/lua/keybindings.lua", key = "k" },
       {
-        icon = " ",
+        desc = "⌨️  keybindings",
+        group = "@property",
+        action = "edit ~/.config/nvim/lua/keybindings.lua",
+        key = "k",
+      },
+      {
+        icon = "📂 ",
         icon_hl = "@variable",
         desc = "Files",
         group = "Label",
@@ -21,19 +26,26 @@ db.setup({
         key = "f",
       },
       {
-        desc = " Project",
+        desc = "🚀 Project",
         group = "DiagnosticHint",
         action = "Telescope projects",
         key = "p",
       },
       {
-        desc = " colorscheme",
+        desc = "👹 colorscheme",
         group = "Number",
         action = "Telescope colorscheme",
         key = "c",
       },
+      {
+        desc = "👾 dashboard",
+        group = "Label",
+        action = "edit ~/.config/nvim/lua/plugin-config/dashboard.lua",
+        key = "d",
+      },
     },
   },
+  change_to_vcs_root = true,
 })
 
 -- db.custom_footer = {
