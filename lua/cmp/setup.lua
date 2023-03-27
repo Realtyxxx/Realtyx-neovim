@@ -48,18 +48,18 @@ local mapping = {
 }
 
 cmp.setup({
-  -- sorting = {
-  --   comparators = {
-  --     cmp.config.compare.offset,
-  --     cmp.config.compare.exact,
-  --     cmp.config.compare.recently_used,
-  --     require("clangd_extensions.cmp_scores"),
-  --     cmp.config.compare.kind,
-  --     cmp.config.compare.sort_text,
-  --     cmp.config.compare.length,
-  --     cmp.config.compare.order,
-  --   },
-  -- },
+  sorting = {
+    comparators = {
+      cmp.config.compare.offset,
+      cmp.config.compare.exact,
+      cmp.config.compare.recently_used,
+      require("clangd_extensions.cmp_scores"),
+      cmp.config.compare.kind,
+      cmp.config.compare.sort_text,
+      cmp.config.compare.length,
+      cmp.config.compare.order,
+    },
+  },
   -- 指定 snippet 引擎 luasnip
   snippet = {
     expand = function(args)
@@ -68,7 +68,7 @@ cmp.setup({
   },
   window = {
     completion = cmp.config.window.bordered(),
-    -- documentation = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
   },
   -- 快捷键
   -- mapping = mapping,

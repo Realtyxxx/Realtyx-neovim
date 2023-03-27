@@ -161,7 +161,10 @@ local M = {
     oldfiles = "<C-p><C-o>",
     current_buffer_tags = "<C-p><C-t>",
     current_buffer_fuzzy_find = "<C-p><C-z>",
+    marks = "<C-p><C-m>",
     projects = "<C-p><C-p>",
+    lsp_incoming_calls = "<C-p><C-i>",
+    -- lsp_outoming_calls = "<C-p><C-k>",
 
     -- 上下移动
     move_selection_next = "<C-j>",
@@ -177,6 +180,7 @@ local M = {
     -- 预览窗口上下滚动
     preview_scrolling_up = "<C-u>",
     preview_scrolling_down = "<C-d>",
+    diagnostics = "<C-p><C-d>",
   },
 
   mkdnflow = {

@@ -54,10 +54,11 @@ null_ls.setup({
     -- formatting.rubocop,
     -- json
     -- npm install -g fixjson
-    formatting.fixjson,
+    -- formatting.fixjson,
+
     -- toml
     -- cargo install taplo-cli
-    formatting.taplo,
+    -- formatting.taplo,
     -----------------------------------------------------
     -- Diagnostics  ---------------------
     -- diagnostics.eslint.with({

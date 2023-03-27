@@ -1,7 +1,11 @@
-local colorscheme = "gruvbox"
--- local colorscheme = "duskfox"
--- local colorscheme = "dayfox"
--- local colorscheme = "tokyonight-storm"
+local colorscheme = "tokyonight-moon" -- moon storm nignt day
+-- local colorscheme = "gruvbox"
+-- local colorscheme = "habamax"
+-- local colorscheme = "lunaperche"
+-- local colorscheme = "duskfox" -- duskfox dawnfox
+-- local colorscheme = "carbonfox"
+-- local colorscheme = "molokai"
+-- local colorscheme = "onedark"
 -- tokyonight
 -- OceanicNext
 -- gruvbox

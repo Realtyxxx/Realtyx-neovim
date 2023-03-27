@@ -71,9 +71,7 @@ end
 
 ------------tyx  move from init.vim--------------------
 -- SymbolsOutline
-map("n", "<F4>", ":SymbolsOutline<CR>", opt)
-map("n", "<M-n>", ":SymbolsOutline<CR>", opt)
-map("n", "<leader>n", ":SymbolsOutline<CR>", opt)
+map("n", "=", ":SymbolsOutline<CR>", opt) -- not usable
 -- Markdown
 map("n", "<F7>", ":MarkdownPreviewToggle<CR>", opt)
 -- 全选
@@ -86,10 +84,12 @@ map("n", "<f10>f", ":RunFile float <CR>", opt)
 map("n", "<f10>b", ":RunFile buf <CR>", opt)
 map("n", "<f10>t", ":RunFile toggleterm <CR>", opt)
 map("n", "<f10>p", ":RunProject float <CR>", opt)
+
 -- todo
 local tc = uConfig.todoComments
 map("n", tc.TodoTelescope, ":TodoTelescope <CR>", opt)
 map("n", tc.TodoLocList, ":TodoLocList <CR>", opt)
+
 -- clangd
 map("n", uConfig.clangd.ClangdSwitchSourceHeader, ":ClangdSwitchSourceHeader<CR>", opt)
 -- hop
@@ -213,7 +213,7 @@ pluginKeys.mapLSP = function(mapbuf)
   mapbuf(
     "n",
     lsp.references,
-    "<cmd>lua require'telescope.builtin'.lsp_references(require('telescope.themes').get_ivy())<CR>"
+    "<cmd>lua require'telescope.builtin'.lsp_references(require('telescope.themes').get_cursor())<CR>"
   )
 
   -- Format
@@ -238,8 +238,14 @@ pluginKeys.mapLSP = function(mapbuf)
   mapbuf("n", lsp.goto_prev, "<cmd>Lspsaga diagnostic_jump_prev<cr>", opt)
 
   -- 未用
-  mapbuf("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opt)
-  mapbuf("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opt)
+  -- mapbuf("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opt)
+  -- mapbuf("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opt)
+  --[[ mapbuf("n", "gi", function()
+    require("telescope.builtin").lsp_implementations({
+      initial_mode = "normal",
+      -- ignore_filename = false,
+    })
+  end) ]]
   -- mapbuf('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opt)
   -- mapbuf("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opt)
   -- mapbuf('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opt)

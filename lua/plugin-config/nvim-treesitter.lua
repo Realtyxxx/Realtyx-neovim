@@ -32,7 +32,7 @@ treesitter.setup({
     enable = true,
     additional_vim_regex_highlighting = false,
     disable = function(lang, bufnr) -- Disable in large C++ buffers
-      return vim.api.nvim_buf_line_count(bufnr) > 10000
+      return vim.api.nvim_buf_line_count(bufnr) > 3000
     end,
   },
   -- 启用增量选择模块

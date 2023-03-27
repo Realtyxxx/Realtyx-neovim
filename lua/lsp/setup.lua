@@ -33,16 +33,16 @@ mason.setup({
 mason_config.setup({
   ensure_installed = {
     "lua_ls",
-    "tsserver",
+    -- "tsserver",
     -- "tailwindcss",
     "bashls",
     "cssls",
     "dockerls",
     "emmet_ls",
     "html",
-    "jsonls",
+    -- "jsonls",
     "pyright",
-    "rust_analyzer",
+    -- "rust_analyzer",
     "taplo",
     "yamlls",
     "gopls",
@@ -54,8 +54,9 @@ mason_config.setup({
     "jedi_language_server",
     "pylsp",
     "pyright",
+    "cmake",
   },
-  automatic_installation = false,
+  automatic_installation = true,
 })
 
 -- 安装列表
@@ -68,12 +69,12 @@ local servers = {
   html = require("lsp.config.html"),
   cssls = require("lsp.config.css"),
   emmet_ls = require("lsp.config.emmet"),
-  jsonls = require("lsp.config.json"),
-  tsserver = require("lsp.config.typescript"),
+  -- jsonls = require("lsp.config.json"),
+  -- tsserver = require("lsp.config.typescript"),
   yamlls = require("lsp.config.yamlls"),
   dockerls = require("lsp.config.docker"),
   -- tailwindcss = require("lsp.config.tailwindcss"),
-  rust_analyzer = require("lsp.config.rust"),
+  -- rust_analyzer = require("lsp.config.rust"),
   taplo = require("lsp.config.taplo"), -- toml
   gopls = require("lsp.config.gopls"),
   marksman = require("lsp.config.markdown"),

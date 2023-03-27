@@ -6,39 +6,63 @@ end
 
 db.setup({
   theme = "hyper",
+  -- preview = {
+  --   command = "pokemonsay hello", -- preview command
+  --   file_path = "", -- preview file path
+  --   file_height = 8, -- preview file height
+  --   file_width = 40, -- preview file width
+  -- },
   config = {
     week_header = {
-      enable = true,
+      -- enable = true,
+      enable = false,
+      concat = "Realtyxxx",
+      disable_move = true,
     },
+    packages = { enable = true },
+    project = {
+      enable = true,
+      limit = 8,
+      icon = "Recent Projects",
+      label = "",
+      action = "Telescope find_files cwd=",
+    },
+    -- mru = { limit = 10, icon = "Realtyxxx", label = " " },
+
+    footer = {},
     shortcut = {
       {
-        desc = "⌨️  keybindings",
+        icon = "⌨️  ",
+        desc = "keybindings",
         group = "@property",
         action = "edit ~/.config/nvim/lua/keybindings.lua",
         key = "b",
       },
       {
         icon = "📂 ",
-        icon_hl = "@variable",
+        -- icon_hl = "@variable",
         desc = "Files",
         group = "Label",
         action = "Telescope find_files",
         key = "f",
       },
       {
-        desc = "🚀 Project",
+        icon = "🚀 ",
+        desc = "Project",
         group = "DiagnosticHint",
         action = "Telescope projects",
         key = "p",
       },
       {
-        desc = "👹 colorscheme",
+        icon = "👹 ",
+        desc = "colorscheme",
         group = "Number",
         action = "Telescope colorscheme",
         key = "c",
       },
       {
-        desc = "👾 dashboard",
+        icon = "👾 ",
+        desc = "dashboard",
         group = "Label",
         action = "edit ~/.config/nvim/lua/plugin-config/dashboard.lua",
         key = "d",

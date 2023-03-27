@@ -42,6 +42,7 @@ packer.startup({
         require("plugin-config.impatient")
       end,
     })
+
     use("nathom/filetype.nvim")
 
     -- nvim-notify
@@ -186,7 +187,7 @@ packer.startup({
       end,
     })
 
-    -- fidget.nvim
+    -- fidget.nvim : ui for nvim lsp progress
     use({
       "j-hui/fidget.nvim",
       config = function()
@@ -208,7 +209,10 @@ packer.startup({
       "jakewvincent/mkdnflow.nvim",
       -- rocks = "luautf8", -- Ensures optional luautf8 dependency is installed
       config = function()
-        require("mkdnflow").setup({})
+        require("mkdnflow").setup({
+          prefix = true,
+          string = [[os.date('%Y-%m')]],
+        })
       end,
     })
 
@@ -254,15 +258,15 @@ packer.startup({
     use("mhartington/formatter.nvim")
     use({ "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim" })
     -- TypeScript 增强
-    use({ "jose-elias-alvarez/nvim-lsp-ts-utils", requires = "nvim-lua/plenary.nvim" })
-    use("jose-elias-alvarez/typescript.nvim")
+    -- use({ "jose-elias-alvarez/nvim-lsp-ts-utils", requires = "nvim-lua/plenary.nvim" })
+    -- use("jose-elias-alvarez/typescript.nvim")
 
     -- Lua 增强
     use("folke/neodev.nvim")
     -- JSON 增强
-    use("b0o/schemastore.nvim")
+    -- use("b0o/schemastore.nvim")
     -- Rust 增强
-    use("simrat39/rust-tools.nvim")
+    -- use("simrat39/rust-tools.nvim")
     --------------------- colorschemes --------------------
     -- tokyonight
     use({
@@ -284,14 +288,8 @@ packer.startup({
       requires = { "rktjmp/lush.nvim" },
     })
 
-    -- zephyr
-    -- use("glepnir/zephyr-nvim")
-
-    -- -- nord
-    -- use("shaunsingh/nord.nvim")
-
     -- onedark
-    use("ful1e5/onedark.nvim")
+    -- use("ful1e5/onedark.nvim")
 
     -- nightfox
     use("EdenEast/nightfox.nvim")
@@ -304,20 +302,21 @@ packer.startup({
         require("plugin-config.gitsigns")
       end,
     })
-    -- vimspector
-    use({
-      "puremourning/vimspector",
-      cmd = { "VimspectorInstall", "VimspectorUpdate" },
-      fn = { "vimspector#Launch()", "vimspector#ToggleBreakpoint", "vimspector#Continue" },
-      config = function()
-        require("dap.vimspector")
-      end,
-    })
-    ----------------------------------------------
-    -- nvim-dap
-    use("mfussenegger/nvim-dap")
-    use("theHamsta/nvim-dap-virtual-text")
-    use("rcarriga/nvim-dap-ui")
+
+    -- -- vimspector
+    -- use({
+    --   "puremourning/vimspector",
+    --   cmd = { "VimspectorInstall", "VimspectorUpdate" },
+    --   fn = { "vimspector#Launch()", "vimspector#ToggleBreakpoint", "vimspector#Continue" },
+    --   config = function()
+    --     require("dap.vimspector")
+    --   end,
+    -- })
+    -- ----------------------------------------------
+    -- -- nvim-dap
+    -- use("mfussenegger/nvim-dap")
+    -- use("theHamsta/nvim-dap-virtual-text")
+    -- use("rcarriga/nvim-dap-ui")
 
     -- node
     use({
@@ -329,8 +328,8 @@ packer.startup({
     })
 
     -- go
-    use("leoluz/nvim-dap-go")
-
+    -- use("leoluz/nvim-dap-go")
+    --
     --hop
     use({
       "phaazon/hop.nvim",
@@ -341,23 +340,23 @@ packer.startup({
       end,
     })
 
-    use({
-      "mfussenegger/nvim-dap-python",
-      requires = { "mfussenegger/nvim-dap" },
-      -- config = function()
-      --   require("dap-python").setup("/Users/nn/.local/share/nvim/mason/bin/debugpy")
-      -- end,
-    })
+    -- use({
+    --   "mfussenegger/nvim-dap-python",
+    --   requires = { "mfussenegger/nvim-dap" },
+    --   -- config = function()
+    --   --   require("dap-python").setup("/Users/nn/.local/share/nvim/mason/bin/debugpy")
+    --   -- end,
+    -- })
 
     -- use("jbyuki/one-small-step-for-vimkind")
     --[[ use("dstein64/vim-startuptime") ]]
 
     -- move from my vimrc
-    use("octol/vim-cpp-enhanced-highlight")
+    -- use("octol/vim-cpp-enhanced-highlight")
     use("vim-scripts/ctags.vim")
     use("vim-scripts/a.vim")
     -- use("majutsushi/tagbar")
-    use("bfrg/vim-cpp-modern")
+    -- use("bfrg/vim-cpp-modern")
 
     -- bookmarks
     use({
@@ -396,7 +395,7 @@ packer.startup({
     -- snapshot = "v1",
 
     -- 最大并发数
-    max_jobs = 32,
+    max_jobs = 16,
     -- 自定义源
     git = {
       -- default_url_format = "https://hub.fastgit.xyz/%s",
