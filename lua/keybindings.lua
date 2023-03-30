@@ -263,50 +263,50 @@ end
 -- end
 
 -- nvim-dap
-pluginKeys.mapDAP = function()
-  -- 开始
-  map("n", "<leader>dd", ":RustDebuggables<CR>", opt)
-  -- 结束
-  map(
-    "n",
-    "<leader>de",
-    ":lua require'dap'.close()<CR>"
-      .. ":lua require'dap'.terminate()<CR>"
-      .. ":lua require'dap.repl'.close()<CR>"
-      .. ":lua require'dapui'.close()<CR>"
-      .. ":lua require('dap').clear_breakpoints()<CR>"
-      .. "<C-w>o<CR>",
-    opt
-  )
-  -- 继续
-  map("n", "<leader>dc", ":lua require'dap'.continue()<CR>", opt)
-  -- 设置断点
-  map("n", "<leader>dt", ":lua require('dap').toggle_breakpoint()<CR>", opt)
-  map("n", "<leader>dT", ":lua require('dap').clear_breakpoints()<CR>", opt)
-  --  stepOver, stepOut, stepInto
-  map("n", "<leader>dj", ":lua require'dap'.step_over()<CR>", opt)
-  map("n", "<leader>dk", ":lua require'dap'.step_out()<CR>", opt)
-  map("n", "<leader>dl", ":lua require'dap'.step_into()<CR>", opt)
-  -- 弹窗
-  map("n", "<leader>dh", ":lua require'dapui'.eval()<CR>", opt)
-end
-
--- vimspector
-pluginKeys.mapVimspector = function()
-  -- 开始
-  map("n", "<leader>dd", ":call vimspector#Launch()<CR>", opt)
-  -- 结束
-  map("n", "<Leader>de", ":call vimspector#Reset()<CR>", opt)
-  -- 继续
-  map("n", "<Leader>dc", ":call vimspector#Continue()<CR>", opt)
-  -- 设置断点
-  map("n", "<Leader>dt", ":call vimspector#ToggleBreakpoint()<CR>", opt)
-  map("n", "<Leader>dT", ":call vimspector#ClearBreakpoints()<CR>", opt)
-  --  stepOver, stepOut, stepInto
-  map("n", "<leader>dj", "<Plug>VimspectorStepOver", opt)
-  map("n", "<leader>dk", "<Plug>VimspectorStepOut", opt)
-  map("n", "<leader>dl", "<Plug>VimspectorStepInto", opt)
-end
+-- pluginKeys.mapDAP = function()
+--   -- 开始
+--   map("n", "<leader>dd", ":RustDebuggables<CR>", opt)
+--   -- 结束
+--   map(
+--     "n",
+--     "<leader>de",
+--     ":lua require'dap'.close()<CR>"
+--       .. ":lua require'dap'.terminate()<CR>"
+--       .. ":lua require'dap.repl'.close()<CR>"
+--       .. ":lua require'dapui'.close()<CR>"
+--       .. ":lua require('dap').clear_breakpoints()<CR>"
+--       .. "<C-w>o<CR>",
+--     opt
+--   )
+--   -- 继续
+--   map("n", "<leader>dc", ":lua require'dap'.continue()<CR>", opt)
+--   -- 设置断点
+--   map("n", "<leader>dt", ":lua require('dap').toggle_breakpoint()<CR>", opt)
+--   map("n", "<leader>dT", ":lua require('dap').clear_breakpoints()<CR>", opt)
+--   --  stepOver, stepOut, stepInto
+--   map("n", "<leader>dj", ":lua require'dap'.step_over()<CR>", opt)
+--   map("n", "<leader>dk", ":lua require'dap'.step_out()<CR>", opt)
+--   map("n", "<leader>dl", ":lua require'dap'.step_into()<CR>", opt)
+--   -- 弹窗
+--   map("n", "<leader>dh", ":lua require'dapui'.eval()<CR>", opt)
+-- end
+--
+-- -- vimspector
+-- pluginKeys.mapVimspector = function()
+--   -- 开始
+--   map("n", "<leader>dd", ":call vimspector#Launch()<CR>", opt)
+--   -- 结束
+--   map("n", "<Leader>de", ":call vimspector#Reset()<CR>", opt)
+--   -- 继续
+--   map("n", "<Leader>dc", ":call vimspector#Continue()<CR>", opt)
+--   -- 设置断点
+--   map("n", "<Leader>dt", ":call vimspector#ToggleBreakpoint()<CR>", opt)
+--   map("n", "<Leader>dT", ":call vimspector#ClearBreakpoints()<CR>", opt)
+--   --  stepOver, stepOut, stepInto
+--   map("n", "<leader>dj", "<Plug>VimspectorStepOver", opt)
+--   map("n", "<leader>dk", "<Plug>VimspectorStepOut", opt)
+--   map("n", "<leader>dl", "<Plug>VimspectorStepInto", opt)
+-- end
 
 -- gitsigns
 pluginKeys.gitsigns_on_attach = function(bufnr)

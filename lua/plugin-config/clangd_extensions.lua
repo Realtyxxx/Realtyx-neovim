@@ -20,7 +20,7 @@ require("clangd_extensions").setup({
     -- These apply to the default ClangdSetInlayHints command
     inlay_hints = {
       -- Only show inlay hints for the current line
-      only_current_line = true,
+      only_current_line = false,
       -- Event which triggers a refersh of the inlay hints.
       -- You can make this "CursorMoved" or "CursorMoved,CursorMovedI" but
       -- not that this may cause  higher CPU usage.

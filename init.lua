@@ -19,7 +19,7 @@ require("cmp.setup")
 -- 格式化
 require("format.setup")
 -- DAP
-require("dap.setup")
+-- require("dap.setup")
 
 -- require("plugin-config.instant-markdown")
 -- require("dap.vimspector")
