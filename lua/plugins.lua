@@ -384,6 +384,21 @@ packer.startup({
       end,
     })
 
+    -- Window
+    -- use({
+    --   "anuvyklack/windows.nvim",
+    --   requires = {
+    --     "anuvyklack/middleclass",
+    --     "anuvyklack/animation.nvim",
+    --   },
+    --   config = function()
+    --     vim.o.winwidth = 10
+    --     vim.o.winminwidth = 10
+    --     vim.o.equalalways = false
+    --     require("windows").setup()
+    --   end,
+    -- })
+
     if paccker_bootstrap then
       packer.sync()
     end
@@ -393,7 +408,7 @@ packer.startup({
     snapshot_path = require("packer.util").join_paths(vim.fn.stdpath("config"), "snapshots"),
     -- 这里锁定插件版本在v1，不会继续更新插件
     -- snapshot = require("packer.util").join_paths(vim.fn.stdpath("config"), "snapshots") .. "/v1",
-    -- snapshot = "v1",
+    snapshot = "v3",
 
     -- 最大并发数
     max_jobs = 16,
