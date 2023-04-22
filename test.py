@@ -1,5 +1,5 @@
-import os
-import numpy as np
+# import os
+# import numpy as np
 import tvm
 from tvm import te, auto_scheduler
 
@@ -16,7 +16,7 @@ def matmul_add(N, L, M, dtype):
         (N, M),
         lambda i, j: te.sum(A[i, k] * B[k, j], axis=k),
         name="matmul",
-        attrs=("layout_free_placeholders": [B]),
+        attrs={"layout_free_placeholders": [B]},
     )
     out = te.compute((N, M), lambda i, j: matmul[i, j] + C[i, j], name="out")
     return [A, B, C, out]
@@ -28,4 +28,4 @@ N = L = M = 1024
 task = tvm.auto_scheduler.SearchTask(
     func=matmul_add, args=(N, L, M,  "float32"), target=target)
 print("Computational DAG:")
-print(task.compute_tag)
+print(task.compute_dag)

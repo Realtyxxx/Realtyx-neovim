@@ -80,9 +80,9 @@ local servers = {
   marksman = require("lsp.config.markdown"),
   -- clangd = require("lsp.config.clangd"),
   cmake = require("lsp.config.cmake"),
-  pyright = require("lsp.config.python"),
+  -- pyright = require("lsp.config.python"),
   -- jedi_language_server = require("lsp.config.python"),
-  -- pylsp = require("lsp.config.python"),
+  pylsp = require("lsp.config.python"),
 }
 
 for name, config in pairs(servers) do

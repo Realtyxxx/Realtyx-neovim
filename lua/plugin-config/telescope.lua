@@ -56,7 +56,7 @@ telescope.setup({
 })
 
 keymap("n", uTelescope.find_files, ":Telescope find_files<CR>")
-keymap("n", uTelescope.live_grep, ":Telescope live_grep<CR>")
+keymap("n", uTelescope.live_grep, ":Telescope live_grep theme=ivy<CR>")
 keymap("n", uTelescope.git_status, ":Telescope git_status<CR>")
 keymap("n", uTelescope.oldfiles, ":Telescope oldfiles<CR>")
 keymap("n", uTelescope.current_buffer_fuzzy_find, ":Telescope current_buffer_fuzzy_find theme=ivy<CR>")

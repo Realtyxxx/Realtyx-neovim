@@ -330,6 +330,7 @@ packer.startup({
     -- go
     -- use("leoluz/nvim-dap-go")
     --
+
     --hop
     use({
       "phaazon/hop.nvim",
@@ -352,11 +353,11 @@ packer.startup({
     --[[ use("dstein64/vim-startuptime") ]]
 
     -- move from my vimrc
-    -- use("octol/vim-cpp-enhanced-highlight")
+    use("octol/vim-cpp-enhanced-highlight")
     use("vim-scripts/ctags.vim")
     use("vim-scripts/a.vim")
     -- use("majutsushi/tagbar")
-    -- use("bfrg/vim-cpp-modern")
+    use("bfrg/vim-cpp-modern")
 
     -- bookmarks
     use({

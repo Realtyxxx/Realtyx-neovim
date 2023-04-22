@@ -23,6 +23,7 @@ project.setup({
     "Readme.md",
     "readme.md",
     "readme.txt",
+    "readme",
     "_darcs",
     ".hg",
     ".bzr",
