@@ -30,8 +30,7 @@ require("code_runner").setup({
     -- Transparency (see ':h winblend')
     blend = 0,
   },
-  filetype_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/code_runner.nvim/lua/code_runner/code_runner.json",
-  --[[   filetype = {
+  filetype = {
     -- java = "cd $dir && javac $fileName && java $fileNameWithoutExt",
     -- python = "python3 -u",
     -- typescript = "deno run",
@@ -88,8 +87,26 @@ require("code_runner").setup({
     fortran_modern = "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
     fortran_fixed_form = "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
     fortran = "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-  }, ]]
-  project_path = vim.fn.stdpath("data")
-    .. "/site/pack/packer/start/code_runner.nvim/lua/code_runner/project_manager.json",
-  project = {},
+  },
+  project = {
+    ["~/python/intel_2021_1"] = {
+      name = "Intel Course 2021",
+      description = "Simple python project",
+      file_name = "POO/main.py",
+    },
+    ["~/deno/example"] = {
+      name = "ExapleDeno",
+      description = "Project with deno using other command",
+      file_name = "http/main.ts",
+      command = "deno run --allow-net",
+    },
+    ["~/cpp/example"] = {
+      name = "ExapleCpp",
+      description = "Project with make file",
+      command = "make buid && cd buid/ && ./compiled_file",
+    },
+  },
+  -- filetype_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/code_runner.nvim/lua/code_runner/code_runner.json",
+  -- project_path = vim.fn.stdpath("data")
+  -- .. "/site/pack/packer/start/code_runner.nvim/lua/code_runner/project_manager.json",
 })
