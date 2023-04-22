@@ -14,8 +14,7 @@ db.setup({
   -- },
   config = {
     week_header = {
-      -- enable = true,
-      enable = false,
+      enable = true,
       concat = "Realtyxxx",
       disable_move = true,
     },
