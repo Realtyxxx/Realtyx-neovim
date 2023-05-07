@@ -1,4 +1,4 @@
-local colorscheme = "tokyonight-moon" -- moon storm nignt day
+local colorscheme = "tokyonight-storm" -- moon storm nignt day
 -- local colorscheme = "gruvbox"
 -- local colorscheme = "habamax"
 -- local colorscheme = "lunaperche"
