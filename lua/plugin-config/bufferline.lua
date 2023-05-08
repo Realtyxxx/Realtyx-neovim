@@ -47,7 +47,7 @@ bufferline.setup({
         toggle_hidden_on_enter = true, -- when you re-enter a hidden group this options re-opens that group so the buffer is visible
       },
       items = {
-        {
+        --[[ {
           name = "Tests", -- Mandatory
           highlight = { underline = true, sp = "blue" }, -- Optional
           priority = 2, -- determines where it will appear relative to other groups (Optional)
@@ -66,7 +66,7 @@ bufferline.setup({
           separator = { -- Optional
             style = require("bufferline.groups").separator.tab,
           },
-        },
+        },]]
       },
     },
   },
