@@ -16,7 +16,7 @@ bufferline.setup({
   options = {
     mode = "buffers", -- set to "tabs" to only show tabpages instead
     -- 关闭 buffer 的命令
-    close_command = "Bdelete! %d",
+    close_command = "bdelete! %d",
     -- 侧边栏配置
     -- 左侧让出 nvim-tree 的位置，显示文字 File Explorer
     offsets = {
@@ -76,7 +76,7 @@ bufferline.setup({
 keymap("n", uBufferLine.prev, ":BufferLineCyclePrev<CR>")
 keymap("n", uBufferLine.next, ":BufferLineCycleNext<CR>")
 -- "moll/vim-bbye" 关闭当前 buffer
-keymap("n", uBufferLine.close, ":Bdelete!<CR>")
+keymap("n", uBufferLine.close, ":bdelete!<CR>")
 -- 关闭左/右侧标签页
 keymap("n", uBufferLine.close_left, ":BufferLineCloseLeft<CR>")
 keymap("n", uBufferLine.close_right, ":BufferLineCloseRight<CR>")
