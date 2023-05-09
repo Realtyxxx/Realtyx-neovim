@@ -40,10 +40,10 @@ db.setup({
       {
         icon = "📂 ",
         -- icon_hl = "@variable",
-        desc = "Files",
+        desc = "Lazy",
         group = "Label",
-        action = "Telescope find_files",
-        key = "f",
+        action = "Lazy",
+        key = "l",
       },
       {
         icon = "🚀 ",

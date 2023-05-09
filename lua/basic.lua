@@ -53,7 +53,7 @@ if vim.g.neovide then
   vim.g.neovide_cursor_animate_in_insert_mode = true
 
   -- cursor particles
-  vim.g.neovide_cursor_vfx_mode = "ripple" --[railgun, ripple, sonicboom, pixiedust, torpedo, wireframe]
+  vim.g.neovide_cursor_vfx_mode = "railgun" --[railgun, ripple, sonicboom, pixiedust, torpedo, wireframe]
   vim.g.neovide_cursor_vfx_opacity = 200.0
   vim.g.neovide_cursor_vfx_particle_lifetime = 1.2
   vim.g.neovide_cursor_vfx_particle_density = 7.0
