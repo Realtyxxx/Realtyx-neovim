@@ -33,6 +33,7 @@ null_ls.setup({
         "yaml",
         "graphql",
         "markdown",
+        "tex",
       },
       timeout = 10000,
       prefer_local = "node_modules/.bin",
@@ -82,6 +83,7 @@ null_ls.setup({
     -- diagnostics.pylint,
     -- diagnostics.mypy,
     -- diagnostics.flake8,
+    formatting.latexindent,
 
     -- code actions ---------------------
 

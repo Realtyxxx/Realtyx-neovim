@@ -210,15 +210,14 @@ pluginKeys.mapLSP = function(mapbuf)
   mapbuf("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opt)
   mapbuf("n", "gr", "<cmd>Lspsaga lsp_finder<CR>", opt)
   --]]
-  mapbuf(
-    "n",
-    lsp.references,
-    "<cmd>lua require'telescope.builtin'.lsp_references(require('telescope.themes').get_cursor())<CR>"
-  )
+
+  mapbuf("n", lsp.references, function()
+    require("telescope.builtin").lsp_references(require("telescope.themes").get_cursor())
+  end)
 
   -- Format
-  -- keymap("n", keys.format, ":Format<CR>")
-  if vim.fn.has("nvim-0.8") == 1 then
+  keymap("n", keys.format, ":Format<CR>")
+  if vim.fn.has("nvim-0.9") == 1 then
     mapbuf({ "n", "v" }, lsp.format, "<cmd>lua vim.lsp.buf.format({async = true})<CR>")
     mapbuf({ "n", "v" }, "<leader>f", "<cmd>lua vim.lsp.buf.format({async = true})<CR>")
   else
