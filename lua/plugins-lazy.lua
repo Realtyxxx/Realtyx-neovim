@@ -32,7 +32,7 @@ lazy.setup({
     end,
   },
 
-  "nathom/filetype.nvim",
+  -- "nathom/filetype.nvim",
 
   -- nvim-notify
   {
@@ -58,6 +58,15 @@ lazy.setup({
       require("plugin-config.bufferline")
     end,
   },
+
+  -- cokeline
+  -- {
+  --   "willothy/nvim-cokeline",
+  --   requires = "kyazdani42/nvim-web-devicons", -- If you want devicons
+  --   config = function()
+  --     require("plugin-config.cokeline")
+  --   end,
+  -- },
 
   -- lualine
   {
@@ -223,22 +232,29 @@ lazy.setup({
   -- Lspconfig
   "neovim/nvim-lspconfig",
   -- 补全引擎
-  "hrsh7th/nvim-cmp",
+  {
+    "hrsh7th/nvim-cmp",
+    event = "InsertEnter",
+    dependencies = {
+      -- 补全源
+      "hrsh7th/cmp-vsnip",
+      "hrsh7th/cmp-nvim-lsp", -- { name = nvim_lsp }
+      "hrsh7th/cmp-buffer", -- { name = 'buffer' },
+      "hrsh7th/cmp-path", -- { name = 'path' }
+      "hrsh7th/cmp-cmdline", -- { name = 'cmdline' }
+      "hrsh7th/cmp-nvim-lsp-signature-help", -- { name = 'nvim_lsp_signature_help' }
+    },
+  },
   -- Snippet 引擎
   "L3MON4D3/LuaSnip",
   "saadparwaiz1/cmp_luasnip",
-  -- 补全源
-  "hrsh7th/cmp-vsnip",
-  "hrsh7th/cmp-nvim-lsp", -- { name = nvim_lsp }
-  "hrsh7th/cmp-buffer", -- { name = 'buffer' },
-  "hrsh7th/cmp-path", -- { name = 'path' }
-  "hrsh7th/cmp-cmdline", -- { name = 'cmdline' }
-  "hrsh7th/cmp-nvim-lsp-signature-help", -- { name = 'nvim_lsp_signature_help' }
+
   -- 常见编程语言代码段
   "rafamadriz/friendly-snippets",
   -- UI 增强
   "onsails/lspkind-nvim",
   "tami5/lspsaga.nvim",
+
   -- 代码格式化
   "mhartington/formatter.nvim",
   { "jose-elias-alvarez/null-ls.nvim", dependencies = "nvim-lua/plenary.nvim" },
@@ -251,25 +267,28 @@ lazy.setup({
   -- tokyonight
   {
     "folke/tokyonight.nvim",
+    lazy = true,
+    priority = 1000,
     config = function()
       require("plugin-config.tokyonight")
     end,
   },
 
   -- OceanicNext
-  { "mhartington/oceanic-next", event = "VimEnter" },
+  -- { "mhartington/oceanic-next", event = "VimEnter" },
 
   -- molokai
-  "tomasr/molokai",
+  -- "tomasr/molokai",
 
   -- gruvbox
   {
     "ellisonleao/gruvbox.nvim",
+    lazy = true,
     dependencies = { "rktjmp/lush.nvim" },
   },
 
   -- nightfox
-  "EdenEast/nightfox.nvim",
+  -- "EdenEast/nightfox.nvim",
 
   -------------------------------------------------------
   -- git
@@ -296,27 +315,16 @@ lazy.setup({
   -- "rcarriga/nvim-dap-ui",
 
   -- node
-  {
-    "mxsdev/nvim-dap-vscode-js",
-    dependencies = { "mfussenegger/nvim-dap" },
-    config = function()
-      require("dap.nvim-dap.config.vscode-js")
-    end,
-  },
+  -- {
+  --   "mxsdev/nvim-dap-vscode-js",
+  --   dependencies = { "mfussenegger/nvim-dap" },
+  --   config = function()
+  --     require("dap.nvim-dap.config.vscode-js")
+  --   end,
+  -- },
 
   -- go
   -- "leoluz/nvim-dap-go")
-  --
-
-  --hop
-  {
-    "phaazon/hop.nvim",
-    branch = "v2", -- optional but strongly recommended
-    config = function()
-      -- you can configure Hop the way you like here; see :h hop-config
-      require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
-    end,
-  },
 
   -- {
   --   "mfussenegger/nvim-dap-python",
@@ -330,8 +338,18 @@ lazy.setup({
   --[[ "dstein64/vim-startuptime") ]]
 
   -- move from my vimrc
+  --hop
+  {
+    "phaazon/hop.nvim",
+    branch = "v2", -- optional but strongly recommended
+    config = function()
+      -- you can configure Hop the way you like here; see :h hop-config
+      require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
+    end,
+  },
+
   "octol/vim-cpp-enhanced-highlight",
-  "vim-scripts/ctags.vim",
+  { "vim-scripts/ctags.vim", lazy = true },
   "vim-scripts/a.vim",
   -- "majutsushi/tagbar",
   "bfrg/vim-cpp-modern",
@@ -347,9 +365,11 @@ lazy.setup({
   -- clangd
   {
     "p00f/clangd_extensions.nvim",
+    lazy = true,
     config = function()
       require("plugin-config.clangd_extensions")
     end,
+    ft = { "cpp", "c" },
   },
 
   -- CodeRunner
