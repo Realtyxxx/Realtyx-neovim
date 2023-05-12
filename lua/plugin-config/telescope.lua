@@ -73,4 +73,3 @@ pcall(telescope.load_extension, "env")
 pcall(telescope.load_extension, "ui-select")
 
 pcall(telescope.load_extension, "bookmarks")
-pcall(telescope.load_extension, "projects")

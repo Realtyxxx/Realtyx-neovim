@@ -36,6 +36,9 @@ local opts_expr = {
 -- keymap("c", keys.c_next_item, "<C-n>", opts_remap)
 -- keymap("c", keys.c_prev_item, "<C-p>", opts_remap)
 
+--nvim-tree
+keymap("n", "<M-m>", ":NvimTreeToggle<CR>")
+
 -- save && quit
 keymap("n", keys.n_quit_this, ":q!<CR>")
 keymap("n", keys.n_save, ":w<CR>")

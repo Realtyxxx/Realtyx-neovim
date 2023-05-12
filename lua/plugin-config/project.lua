@@ -34,9 +34,9 @@ project.setup({
   scope_chdir = "global", -- 'global'
 })
 
--- local status_telescope, telescope = pcall(require, "telescope")
--- if not status_telescope then
---   vim.notify("没有找到 telescope")
---   return
--- end
--- pcall(telescope.load_extension, "projects")
+local status_telescope, telescope = pcall(require, "telescope")
+if not status_telescope then
+  vim.notify("没有找到 telescope")
+  return
+end
+pcall(telescope.load_extension, "projects")
