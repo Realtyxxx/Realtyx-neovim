@@ -103,7 +103,7 @@ lazy.setup({
   -- dashboard-nvim
   {
     "glepnir/dashboard-nvim",
-    -- event = "VimEnter",
+    event = "VimEnter",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       require("plugin-config.dashboard")
@@ -232,7 +232,7 @@ lazy.setup({
   },
   --------------------- LSP --------------------
   -- installer
-  { "williamboman/mason.nvim", lazy = true },
+  { "williamboman/mason.nvim" },
   "williamboman/mason-lspconfig.nvim",
   -- Lspconfig
   "neovim/nvim-lspconfig",

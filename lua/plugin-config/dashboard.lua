@@ -26,7 +26,7 @@ db.setup({
       label = "",
       action = "Telescope find_files cwd=",
     },
-    mru = { limit = 15, icon = "MRU", label = " " },
+    -- mru = { limit = 10, icon = "MRU", label = " " },
 
     footer = {},
     shortcut = {
