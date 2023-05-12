@@ -1,6 +1,8 @@
 -- require("impatient")
 require("utils.global")
 
+-- NEOVIDE
+require("neovide")
 -- 基础配置
 require("basic")
 -- 快捷键映射

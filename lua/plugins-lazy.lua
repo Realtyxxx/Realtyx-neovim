@@ -25,20 +25,18 @@ vim.g.maplocalleader = keys.leader_key
 
 lazy.setup({
   -------------------------- plugins -------------------------------------------
-  {
+  --[[{
     "lewis6991/impatient.nvim",
-    lazy = true,
     config = function()
       require("plugin-config.impatient")
     end,
-  },
+  },]]
 
   -- "nathom/filetype.nvim",
 
   -- nvim-notify
   {
     "rcarriga/nvim-notify",
-    lazy = true,
     config = function()
       require("plugin-config.nvim-notify")
     end,
@@ -46,7 +44,6 @@ lazy.setup({
   -- nvim-tree
   {
     "nvim-tree/nvim-tree.lua",
-    lazy = true,
     dependencies = "nvim-tree/nvim-web-devicons",
     config = function()
       require("plugin-config.nvim-tree")
@@ -56,7 +53,6 @@ lazy.setup({
   -- bufferline
   {
     "akinsho/bufferline.nvim",
-    lazy = true,
     dependencies = "nvim-tree/nvim-web-devicons",
     config = function()
       require("plugin-config.bufferline")
@@ -75,7 +71,6 @@ lazy.setup({
   -- lualine
   {
     "nvim-lualine/lualine.nvim",
-    lazy = true,
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       require("plugin-config.lualine")
@@ -85,7 +80,6 @@ lazy.setup({
   -- telescope
   {
     "nvim-telescope/telescope.nvim",
-    lazy = true,
     -- opt = true,
     -- cmd = "Telescope",
     dependencies = {
@@ -109,6 +103,7 @@ lazy.setup({
   -- dashboard-nvim
   {
     "glepnir/dashboard-nvim",
+    -- event = "VimEnter",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       require("plugin-config.dashboard")
@@ -118,7 +113,6 @@ lazy.setup({
   -- project
   {
     "ahmedkhalf/project.nvim",
-    lazy = true,
     config = function()
       require("plugin-config.project")
     end,
@@ -127,7 +121,6 @@ lazy.setup({
   -- treesitter
   {
     "nvim-treesitter/nvim-treesitter",
-    lazy = true,
     build = function()
       require("nvim-treesitter.install").update({ with_sync = true })
     end,
@@ -146,7 +139,6 @@ lazy.setup({
   -- indent-blankline
   {
     "lukas-reineke/indent-blankline.nvim",
-    lazy = true,
     config = function()
       require("plugin-config.indent-blankline")
     end,
@@ -155,14 +147,14 @@ lazy.setup({
   -- -- Markdown
   {
     "iamcco/markdown-preview.nvim",
-    lazy = true,
+    --lazy = true,
     ft = { "markdown" },
   },
 
   -- toggleterm
   {
     "akinsho/toggleterm.nvim",
-    lazy = true,
+    --lazy = true,
     config = function()
       require("plugin-config.toggleterm")
     end,
@@ -171,7 +163,6 @@ lazy.setup({
   -- nvim-surround
   {
     "kylechui/nvim-surround",
-    lazy = true,
     config = function()
       require("plugin-config.nvim-surround")
     end,
@@ -180,7 +171,6 @@ lazy.setup({
   -- Comment
   {
     "numToStr/Comment.nvim",
-    lazy = true,
     config = function()
       require("plugin-config.comment")
     end,
@@ -189,7 +179,6 @@ lazy.setup({
   -- nvim-autopairs
   {
     "windwp/nvim-autopairs",
-    lazy = true,
     config = function()
       require("plugin-config.nvim-autopairs")
     end,
@@ -198,7 +187,6 @@ lazy.setup({
   -- fidget.nvim : ui for nvim lsp progress
   {
     "j-hui/fidget.nvim",
-    lazy = true,
     config = function()
       require("plugin-config.fidget")
     end,
@@ -207,7 +195,6 @@ lazy.setup({
   -- todo-comments.nvim
   {
     "folke/todo-comments.nvim",
-    lazy = true,
     dependencies = "nvim-lua/plenary.nvim",
     config = function()
       require("plugin-config.todo-comments")
@@ -217,7 +204,6 @@ lazy.setup({
   -- mkdnflow.nvim
   {
     "jakewvincent/mkdnflow.nvim",
-    lazy = true,
     -- rocks = "luautf8", -- Ensures optional luautf8 dependency is installed
     config = function()
       require("mkdnflow").setup({
@@ -239,7 +225,7 @@ lazy.setup({
   -- zen mode
   {
     "folke/zen-mode.nvim",
-    lazy = true,
+    -- lazy = true,
     config = function()
       require("plugin-config.zen-mode")
     end,
@@ -266,28 +252,27 @@ lazy.setup({
     },
   },
   -- Snippet 引擎
-  { "L3MON4D3/LuaSnip", lazy = true },
-  { "saadparwaiz1/cmp_luasnip", lazy = true },
+  { "L3MON4D3/LuaSnip" },
+  { "saadparwaiz1/cmp_luasnip" },
 
   -- 常见编程语言代码段
-  { "rafamadriz/friendly-snippets", lazy = true },
+  { "rafamadriz/friendly-snippets" },
   -- UI 增强
-  { "onsails/lspkind-nvim", lazy = true },
-  { "tami5/lspsaga.nvim", lazy = true },
+  { "onsails/lspkind-nvim" },
+  { "tami5/lspsaga.nvim" },
 
   -- 代码格式化
-  { "mhartington/formatter.nvim", lazy = true },
+  { "mhartington/formatter.nvim" },
   { "jose-elias-alvarez/null-ls.nvim", dependencies = "nvim-lua/plenary.nvim" },
 
   -- Lua 增强
-  { "folke/neodev.nvim", lazy = true },
+  { "folke/neodev.nvim" },
   -- Rust 增强
   -- "simrat39/rust-tools.nvim",
   --------------------- colorschemes --------------------
   -- tokyonight
   {
     "folke/tokyonight.nvim",
-    lazy = true,
     priority = 1000,
     config = function()
       require("plugin-config.tokyonight")
@@ -368,11 +353,12 @@ lazy.setup({
     end,
   },
 
-  { "octol/vim-cpp-enhanced-highlight", lazy = true },
-  { "vim-scripts/ctags.vim", lazy = true },
-  { "vim-scripts/a.vim", lazy = true },
+  -- cpp
+  -- { "octol/vim-cpp-enhanced-highlight" },
+  -- { "vim-scripts/ctags.vim" },
+  -- { "vim-scripts/a.vim" },
   -- "majutsushi/tagbar",
-  { "bfrg/vim-cpp-modern", lazy = true },
+  -- { "bfrg/vim-cpp-modern" },
 
   -- bookmarks
   {
@@ -385,7 +371,6 @@ lazy.setup({
   -- clangd
   {
     "p00f/clangd_extensions.nvim",
-    lazy = true,
     config = function()
       require("plugin-config.clangd_extensions")
     end,
@@ -413,6 +398,15 @@ lazy.setup({
       vim.o.winminwidth = 10
       vim.o.equalalways = false
       require("windows").setup()
+    end,
+  },
+
+  {
+    "folke/which-key.nvim",
+    config = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+      require("plugin-config.which-key")
     end,
   },
 })
