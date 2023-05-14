@@ -17,6 +17,8 @@ todo.setup({
     WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
     PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
     NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
+    NOTE_TYX = { icon = " ", color = "hint", alt = { "INFO" } },
+    TODO_TYX = { icon = " ", color = "info" },
   },
 
   colors = {
