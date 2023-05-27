@@ -16,10 +16,10 @@ autocmd("InsertEnter", {
 })
 
 -- 进入Terminal 自动进入插入模式
-autocmd("TermOpen", {
-  group = myAutoGroup,
-  command = "startinsert",
-})
+-- autocmd("TermOpen", {
+--   group = myAutoGroup,
+--   command = "startinsert",
+-- })
 
 -- 保存时自动格式化
 autocmd("BufWritePre", {

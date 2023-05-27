@@ -38,13 +38,14 @@ telescope.setup({
       },
     },
   },
-  --[[   pickers = {
+  pickers = {
     find_files = {
       -- theme = "dropdown", -- 可选参数： dropdown, cursor, ivy
       -- cwd = vim.fn.expand("%:p:h"),
       -- cwd = vim.fn.systemlist("git rev-parse --show-toplevel")[1],
+      initial_mode = "insert",
     },
-  }, ]]
+  },
   extensions = {
     ["ui-select"] = {
       require("telescope.themes").get_dropdown({
@@ -71,5 +72,4 @@ pcall(telescope.load_extension, "env")
 -- To get ui-select loaded and working with telescope, you need to call
 -- load_extension, somewhere after setup function:
 pcall(telescope.load_extension, "ui-select")
-
 pcall(telescope.load_extension, "bookmarks")
