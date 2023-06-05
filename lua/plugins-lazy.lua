@@ -288,7 +288,6 @@ lazy.setup({
   -- gruvbox
   {
     "ellisonleao/gruvbox.nvim",
-    lazy = true,
     dependencies = { "rktjmp/lush.nvim" },
   },
 
