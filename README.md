@@ -6,7 +6,7 @@
 
 ## Install
 
-`npx zx https://raw.githubusercontent.com/Realtyxxx/Realtyx-neovim/tyx/install.mjs`
+`npx zx install.mjs`
 
 ## todo
 
