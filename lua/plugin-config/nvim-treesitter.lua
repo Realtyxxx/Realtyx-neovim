@@ -17,7 +17,7 @@ treesitter.setup({
     "lua",
     "javascript",
     "typescript",
-    "tsx",
+    -- "tsx",
     "markdown",
     "bash",
     "c",

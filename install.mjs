@@ -92,9 +92,9 @@ blue("");
 green("下载成功");
 
 blue("");
-blue("开始下载插件管理packer.nvim...");
+// blue("开始下载插件管理packer.nvim...");
 
-await $`git clone --depth 1 https://github.com/wbthomason/packer.nvim .local/share/nvim/site/pack/packer/start/packer.nvim`;
+// await $`git clone --depth 1 https://github.com/wbthomason/packer.nvim .local/share/nvim/site/pack/packer/start/packer.nvim`;
 
 green("");
 green("下载成功");
@@ -106,4 +106,4 @@ nvim +PackerSync
 
 如遇失败可运行 :PackerSync 重新尝试`;
 
-green(notice);
+// green(notice);
