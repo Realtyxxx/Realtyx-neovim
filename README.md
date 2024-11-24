@@ -6,7 +6,7 @@
 
 ## Install
 
-`npx zx http://www.nshen.net/learn-neovim-lua/install.mjs`
+`npx zx install.mjs`
 
 ## todo
 
